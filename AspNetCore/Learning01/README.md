@@ -1,0 +1,2 @@
+# Introduction 
+This youtube video https://www.youtube.com/watch?v=ZXdFisA_hOY **.NET 5 REST API Tutorial - Build From Scratch With C#** gives a brief tutorial on ASP.NET Core. The zip **Net5RestApiTutorial_10.zip** contain the author Julio Casal (julioc@dotnetmicroservices.com) solution.
