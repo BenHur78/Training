@@ -1,0 +1,18 @@
+******************************
+Visual Studio Code Commands
+******************************
+Create a project called Catalog
+
+Using .NET CLI in Visual Studio code to create the project
+1. dotnet new webapi -n Catalog
+
+Notes:
+1.
+dotnet new - Create a new .NET project or file.
+
+2. Using --dry-run it sumulates the actions
+dotnet new webapi -n Catalog --dry-run
+
+3. webapi is the type of project you want to create
+
+4. -n Catalog specifies the name of the directory where the artifacts will be created
