@@ -3,6 +3,21 @@ Visual Studio Code (VS Code) Commands
 ******************************
 
 ------------------------------------
+1.6. Simplify how to build the project
+------------------------------------
+1.6.1 Go to .vscode/tasks.json file and below line 14 (within build task) add these lines:
+
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+
+1.6.2 Go to the terminal, Terminal -> Ruin Build Task.... This imediately builds the project.
+With CTRL + SHIFT + B it will do the same thing.
+
+Without that, you will have to do more clicks to build the project. So this speeds up your build.
+
+------------------------------------
 1.5. Configure VS Code, to not open anytime a new browser when debugging when hit f5
 ------------------------------------
 1.5.1 Go to .vscode/launch.json file
