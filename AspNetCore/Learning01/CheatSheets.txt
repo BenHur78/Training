@@ -3,6 +3,18 @@ Visual Studio Code (VS Code) Commands
 ******************************
 
 ------------------------------------
+2.1. Some quick shorts in VS Code
+------------------------------------
+
+2.1.1 Type "prop" + tab creates a property in a class.
+
+2.1.2 You want to render whitespace in VS Code as dots?
+View -> Appearance -> Render Whitespace
+
+2.1.3 In VS Code, how to display method overloads?
+When you type "(", it will show you the overloads.
+
+------------------------------------
 1.6. Simplify how to build the project
 ------------------------------------
 1.6.1 Go to .vscode/tasks.json file and below line 14 (within build task) add these lines:
