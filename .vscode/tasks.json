@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Catalog.csproj",
+                "${workspaceFolder}/AspNetCore/Learning01/Catalog/Catalog.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/Catalog.csproj",
+                "${workspaceFolder}/AspNetCore/Learning01/Catalog/Catalog.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/Catalog.csproj"
+                "${workspaceFolder}/AspNetCore/Learning01/Catalog/Catalog.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
