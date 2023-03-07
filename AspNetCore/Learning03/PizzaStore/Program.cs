@@ -26,6 +26,17 @@ app.UseSwaggerUI(c =>
 
 
 //Configure routes
+app.MapDelete("/pizza/{id}", async (PizzaContext db, int id) =>
+{
+   var pizza = await db.Pizzas.FindAsync(id);
+   if (pizza is null)
+   {
+      return Results.NotFound();
+   }
+   db.Pizzas.Remove(pizza);
+   await db.SaveChangesAsync();
+   return Results.Ok();
+});
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/pizzas", async (PizzaContext db) => await db.Pizzas.ToListAsync());
 app.MapGet("/pizza/{id}", async (PizzaContext db, int id) => await db.Pizzas.FindAsync(id));
