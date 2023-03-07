@@ -3,3 +3,21 @@ Visual Studio Code (VS Code) Commands
 ******************************
 
 
+------------------------------------
+1.2 Adding services and configuring HTTP request pipeline
+------------------------------------
+1.2.1 You can access the API with this URL
+http://localhost:5282/swagger/index.html
+
+
+------------------------------------
+1.1 Set up the project
+------------------------------------
+1.1.1 Open VS Code and open a new terminal. Type below commands to setup the propect
+dotnet new web -o PizzaStore
+
+1.1.2 In VS Code, open the folder "PizzaStore". VS Code will ask you to accept C# extension, click yes.
+
+1.1.3 To have Swagger, install this package
+
+dotnet add package Swashbuckle.AspNetCore --version 6.2.3
