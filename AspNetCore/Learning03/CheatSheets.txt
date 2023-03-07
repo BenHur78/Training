@@ -6,6 +6,25 @@ Exercise:
 https://learn.microsoft.com/en-us/training/modules/build-web-api-minimal-database/
 
 ------------------------------------
+1.4 Set up SQLLite database
+------------------------------------
+1.4.1 Add one or more NuGet packages to your project to include the database provider.
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+
+1.4.1.1 Tools for EF Core perform design-time development tasks. For example, they create migrations, 
+apply migrations, and generate code for a model based on an existing database.
+
+dotnet tool install --global dotnet-ef
+dotnet tool update --global dotnet-ef
+
+1.4.1.2 Contains all the design-time logic for EF Core to create your database.
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+1.4.2 Configure the database connection.
+1.4.3 Configure the database provider in the ASP.NET Core services.
+1.4.4 Perform database migrations.
+
+------------------------------------
 1.3 Adding EntityFrameworkCore.InMemory to the project
 ------------------------------------
 1.3.1
