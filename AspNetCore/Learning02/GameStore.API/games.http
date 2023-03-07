@@ -1,0 +1,14 @@
+GET http://localhost:5209/games
+
+###
+PUT http://localhost:5209/games/1
+content-type: application/json
+
+{
+    "name": "Street Fighter II",
+    "price": 29.99,
+    "releaseDate": "1991-02-01"
+}
+
+###
+DELETE http://localhost:5209/games/3
