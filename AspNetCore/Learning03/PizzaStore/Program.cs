@@ -28,7 +28,7 @@ app.UseSwaggerUI(c =>
 //Configure routes
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/pizzas", async (PizzaContext db) => await db.Pizzas.ToListAsync());
-
+app.MapGet("/pizza/{id}", async (PizzaContext db, int id) => await db.Pizzas.FindAsync(id));
 app.MapPost("/pizza", async (PizzaContext db, Pizza pizza) =>
 {
     await db.Pizzas.AddAsync(pizza);
