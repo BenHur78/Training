@@ -29,6 +29,15 @@ app.UseSwaggerUI(c =>
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/pizzas", async (PizzaContext db) => await db.Pizzas.ToListAsync());
 app.MapGet("/pizza/{id}", async (PizzaContext db, int id) => await db.Pizzas.FindAsync(id));
+app.MapPut("/pizza/{id}", async (PizzaContext db, Pizza updatepizza, int id) =>
+{
+      var pizza = await db.Pizzas.FindAsync(id);
+      if (pizza is null) return Results.NotFound();
+      pizza.Name = updatepizza.Name;
+      pizza.Description = updatepizza.Description;
+      await db.SaveChangesAsync();
+      return Results.NoContent();
+});
 app.MapPost("/pizza", async (PizzaContext db, Pizza pizza) =>
 {
     await db.Pizzas.AddAsync(pizza);
