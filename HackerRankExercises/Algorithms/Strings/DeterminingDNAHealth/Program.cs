@@ -132,5 +132,5 @@ public class Sample1
     };
 
     public static readonly int assertUnhealthiestStrandsOfDNA = 0;
-    public static readonly int assertHealthiestStrandsOfDNA = 20;
+    public static readonly int assertHealthiestStrandsOfDNA = 19;
 }
