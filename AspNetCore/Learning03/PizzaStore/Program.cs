@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using PizzaStore.Data;
+using PizzaStore.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 //Regist some services
@@ -27,5 +28,12 @@ app.UseSwaggerUI(c =>
 //Configure routes
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/pizzas", async (PizzaContext db) => await db.Pizzas.ToListAsync());
+
+app.MapPost("/pizza", async (PizzaContext db, Pizza pizza) =>
+{
+    await db.Pizzas.AddAsync(pizza);
+    await db.SaveChangesAsync();
+    return Results.Created($"/pizza/{pizza.Id}", pizza);
+});
 
 app.Run();

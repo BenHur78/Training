@@ -2,6 +2,8 @@
 Visual Studio Code (VS Code) Commands
 ******************************
 
+Exercise:
+https://learn.microsoft.com/en-us/training/modules/build-web-api-minimal-database/
 
 ------------------------------------
 1.3 Adding EntityFrameworkCore.InMemory to the project
