@@ -1,0 +1,21 @@
+******************************************************
+SQL
+******************************************************
+
+
+SELECT city, city_len
+FROM (
+    SELECT city, LEN(city) AS city_len, 
+    ROW_NUMBER() OVER(ORDER BY LEN(city), city) AS Row_Num FROM station
+        
+    UNION ALL 
+        
+    SELECT city, LEN(city) AS city_len, 
+    ROW_NUMBER() OVER(ORDER BY LEN(city) DESC, city) AS Row_Num FROM station
+) AS temp
+WHERE Row_Num = 1;
+
+
+Select Distinct City
+From Station
+Where LEFT(City,1) in ('a', 'e', 'i', 'o', 'u') 
