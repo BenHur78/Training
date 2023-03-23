@@ -2,7 +2,103 @@
 SQL
 ******************************************************
 
+--------------------------------------------------------------
+INSERT / UPDATE / DELETE
+--------------------------------------------------------------
 
+-- INSERT
+
+INSERT INTO Production.UnitMeasure  
+VALUES (N'FT', N'Feet', '20080414');
+
+INSERT INTO Production.UnitMeasure  
+VALUES (N'FT', N'Feet', '20080414');
+
+-- UPDATE
+UPDATE HumanResources.Employee  
+SET VacationHours = VacationHours + 8  
+FROM (SELECT TOP 10 BusinessEntityID FROM HumanResources.Employee  
+     ORDER BY HireDate ASC) AS th  
+WHERE HumanResources.Employee.BusinessEntityID = th.BusinessEntityID;  
+GO
+
+-- DELETE
+DELETE FROM Sales.SalesPersonQuotaHistory   
+FROM Sales.SalesPersonQuotaHistory AS spqh  
+INNER JOIN Sales.SalesPerson AS sp  
+ON spqh.BusinessEntityID = sp.BusinessEntityID  
+WHERE sp.SalesYTD > 2500000.00;  
+GO
+--------------------------------------------------------------
+
+Harry Potter and his friends are at Ollivander's with Ron, finally replacing Charlie's old broken wand.
+
+Hermione decides the best way to choose is by determining the minimum number of gold galleons needed to buy each non-evil wand 
+of high power and age. 
+Write a query to print the id, age, coins_needed, and power of the wands that Ron's interested in, sorted in 
+order of descending power. If more than one wand has same power, sort the result in order of descending age.
+
+Select W.Id, WP.age, W.coins_needed, W.power
+From Wands W inner join Wands_Property WP on W.code = WP.code
+Where WP.is_evil = 0
+AND W.coins_needed = ( SELECT MIN(coins_needed) 
+                      FROM Wands W2 INNER JOIN Wands_Property WP2 ON W2.code = WP2.code 
+                      WHERE W2.code = W.code AND W2.Power = W.Power)
+Group By W.Id, WP.age, W.coins_needed, W.power
+Order By W.Power Desc, WP.Age Desc
+
+--------------------------------------------------------------
+Select S.hacker_id, H.name--, Count(*)
+From ((Submissions S inner join Challenges C on S.challenge_id = C.challenge_id) inner join Difficulty D
+on C.difficulty_level = D.difficulty_level) inner join Hackers H on S.hacker_id = H.hacker_id
+Where S.score = D.score
+Group By S.hacker_id, H.name
+Having Count(*) > 1
+Order By Count(*) Desc, S.hacker_id Asc
+
+Your Output (stdout)
+27232 Phillip
+
+--------------------------------------------------------------
+* three columns: Name, Grade and Mark. 
+* Ketty doesn't want the NAMES of those students who received a grade lower than 8. 
+* The report must be in descending order by grade -- i.e. higher grades are entered first. 
+* If there is more than one student with the same grade (8-10) assigned to them, order those particular students by their name alphabetically.
+* Finally, if the grade is lower than 8, use "NULL" as their name and list them by their grades in descending order. 
+* If there is more than one student with the same grade (1-7) assigned to them, order those particular students by their marks in ascending order.
+
+Write a query to help Eve.
+
+Select CASE WHEN Gr.Grade < 8 THEN NULL ELSE St.Name END, Gr.Grade, St.Marks
+From Students St, Grades Gr
+Where St.Marks between Gr.Min_Mark and Gr.Max_Mark
+Order By Gr.Grade Desc, St.Name Asc
+
+--------------------------------------------------------------
+Select Co.Continent, AVG(Ci.Population)
+From Country Co inner join City Ci on Co.Code = Ci.CountryCode
+Group By Co.Continent
+--------------------------------------------------------------
+Select SUM(Ci.Population)
+From Country Co inner join City Ci on Co.Code = Ci.CountryCode
+Where Co.Continent = 'Asia'
+--------------------------------------------------------------
+
+
+Select Name + '(' + LEFT(Occupation,1) + ')'
+From Occupations
+Order By Name
+Go
+Select Occupation, Count(*)
+From Occupations
+Order By Count(*)
+
+Select 'There are a total of ' + CAST(Count(*) AS NVARCHAR(MAX)) + ' ' + Occupation + 's.'
+From Occupations
+Group By Occupation
+Order By Count(*) Asc, Occupation Asc
+
+--------------------------------------------------------------
 SELECT city, city_len
 FROM (
     SELECT city, LEN(city) AS city_len, 
@@ -15,7 +111,13 @@ FROM (
 ) AS temp
 WHERE Row_Num = 1;
 
-
+--------------------------------------------------------------
 Select Distinct City
 From Station
 Where LEFT(City,1) in ('a', 'e', 'i', 'o', 'u') 
+
+
+--------------------------------------------------------------
+Documentation
+--------------------------------------------------------------
+https://learn.microsoft.com/en-us/sql/t-sql/functions/left-transact-sql?view=sql-server-ver16
