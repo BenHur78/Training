@@ -1,4 +1,10 @@
 ***
+Commits
+***
+
+Learning04Book - chapter 03 - 
+
+***
 Using dotnet command
 ***
 
@@ -13,6 +19,10 @@ dotnet new sln -o FirstProject
 
 dotnet sln FirstProject add FirstProject
 
+2. This sets Hot reload. In Ms Visual Studio open a Developer Command prompt and run this command. When you do a change in a file, it will
+automatically compile and build and run the application.
+
+dotnet watch
 
 ***
 Using Docker to run a local SQL Server Express
