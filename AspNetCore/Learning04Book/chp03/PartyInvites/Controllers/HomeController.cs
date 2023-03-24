@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PartyInvites.Models;
 
 namespace PartyInvites.Controllers;
@@ -11,8 +10,16 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet]
     public ViewResult RsvpForm()
     {
+        return View();
+    }
+
+    [HttpPost]
+    public ViewResult RsvpForm(GuestResponse guestResponse)
+    {
+        // TODO: store response from guest
         return View();
     }
 
