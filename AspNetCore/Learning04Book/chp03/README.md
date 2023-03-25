@@ -18,3 +18,15 @@ dotnet new mvc --no-https --output PartyInvites --framework net6.0
 dotnet new sln -o PartyInvites
 dotnet sln PartyInvites add PartyInvites
 ```
+
+## Index page
+![Index](./images/index.PNG)
+
+## RSVP form
+![Index](./images/rsvp.PNG)
+
+## Thanks page
+![Index](./images/thanks.PNG)
+
+## List of responses page
+![Index](./images/listOfResponses.PNG)
