@@ -23,3 +23,10 @@ dotnet new web --no-https --output MySolution/MyProject --framework net6.0
 dotnet new sln -o MySolution
 dotnet sln MySolution add MySolution/MyProject
 ```
+
+- **Adding nuget packages and listing project packages**
+
+```
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
+dotnet list package
+```

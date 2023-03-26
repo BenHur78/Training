@@ -38,6 +38,17 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
 
 dotnet list package
 
+3.3 To remove a package
+dotnet remove package Microsoft.EntityFrameworkCore.SqlServer
+
+3.4 Installing tool package's
+dotnet tool uninstall --global dotnet-ef
+dotnet tool install --global dotnet-ef --version 6.0.0
+
+3.4.1 Installing client side packages
+dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli
+dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.1.113
+
 
 ***
 Using Docker to run a local SQL Server Express
