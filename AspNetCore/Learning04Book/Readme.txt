@@ -49,6 +49,16 @@ dotnet tool install --global dotnet-ef --version 6.0.0
 dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli
 dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.1.113
 
+***
+Using libman command
+***
+
+1. Set LibraryManager (LibMan) to download packages from https://cdnjs.com repository
+libman init -p cdnjs
+
+
+2. Installing the Bootstrap CSS Framework
+libman install bootstrap@5.1.3 -d wwwroot/lib/bootstrap
 
 ***
 Using Docker to run a local SQL Server Express
