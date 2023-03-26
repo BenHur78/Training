@@ -28,6 +28,17 @@ automatically compile and build and run the application.
 
 dotnet watch
 
+3. Managing Packages
+
+3.1 Adding a Package to the Example Project
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
+
+3.2 How to list the packages in a project
+
+dotnet list package
+
+
 ***
 Using Docker to run a local SQL Server Express
 ***
