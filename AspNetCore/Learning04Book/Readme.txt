@@ -2,13 +2,13 @@
 Commits
 ***
 
-Learning04Book - chapter 03 - 
+Learning04Book - chapter 04 - 
 
 ***
 Using dotnet command
 ***
 
-1. This command creates a folder named FirstProject and adds to it a file named global.json, which specifies the version of .NET that 
+1.1 This command creates a folder named FirstProject and adds to it a file named global.json, which specifies the version of .NET that 
 the project will use; this ensures you get the expected results when following the examples.
 
 dotnet new globaljson --sdk-version 6.0.403 --output FirstProject
@@ -18,6 +18,10 @@ dotnet new mvc --no-https --output FirstProject --framework net6.0
 dotnet new sln -o FirstProject
 
 dotnet sln FirstProject add FirstProject
+
+1.2 How to create a .gitignore file
+
+dotnew gitignore --output MySolution/MyProject
 
 2. This sets Hot reload. In Ms Visual Studio open a Developer Command prompt and run this command. When you do a change in a file, it will
 automatically compile and build and run the application.
