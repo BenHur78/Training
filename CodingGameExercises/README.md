@@ -1,6 +1,11 @@
 # Introduction 
 This folder purpose is to solve Codingame exercises.
 
+# Certification's
+
+## C#
+![alt text](./CSharp/Certification/Certification.PNG)
+
 ## Puzzle - There is no spoon - Episode 1
 - What I will learn
     - In this puzzle, you have to detect special characters from a string. You also have to store input values into a grid to explore it. You have to go through all elements from a grid (certainly using a double loop) and from those points, iterate again on some elements of the grid. Solving this puzzle make you learn the concept of nested loop.
