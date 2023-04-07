@@ -2,8 +2,6 @@
 Commits
 ***
 
-Learning04Book - chapter 04 - 
-
 ***
 Using dotnet command
 ***
@@ -58,7 +56,7 @@ libman init -p cdnjs
 
 
 2. Installing the Bootstrap CSS Framework
-libman install bootstrap@5.1.3 -d wwwroot/lib/bootstrap
+libman install bootstrap@5.2.3 -d wwwroot/lib/bootstrap
 
 ***
 Using Docker to run a local SQL Server Express
