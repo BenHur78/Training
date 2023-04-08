@@ -81,6 +81,7 @@ Product?[]? arr2 = null; //Ok because the array of products is allowed to be nul
 ```
 
 6. Guarding against null in a verbose way. The compiler understand that after an if/else block the variable cannot be null, in this way a warning will be not generated.
+```
 ...
 public ViewResult Index() {
 
@@ -104,7 +105,7 @@ public ViewResult Index() {
 
 7. Using the null conditional operator ?. Be aware that the null conditional operator can return null, so the result need to be assigned to a nullable type like _string?_.
 
-...
+```
 public ViewResult Index() {
 
     Product?[] products = Product.GetProducts();
@@ -120,6 +121,16 @@ public ViewResult Index() {
 }
 ```
 
+8. Using the null coalescing operator _??_ in conjunction with the null conditional operator _?_. There are cases where the ?? operator cannot be used with ? like await/async scenarios.
+
+```
+public ViewResult Index() {
+
+    Product?[] products = Product.GetProducts();
+        
+    return View(new string[] { products[0]?.Name ?? "No Value" });
+}
+```
 
 
 ## Mixing static and dynamic values in strings using string interpolation
