@@ -132,6 +132,13 @@ public ViewResult Index() {
 }
 ```
 
+9. Using the null-forgiving _!_ operator to override null state analysis. The C# compiler has a sophisticated understanding of when a variable can be null, but it doesn’t always get it right, and there are times when you have a better understanding of whether a null value can arise than the compiler. In these situations, the null-forgiving operator can be used to tell the compiler that a variable isn’t null, regardless of what the null state analysis suggests:
+
+```  
+    return View(new string[] { products[0]!.Name });
+```
+
+You need to be right, otherwise you will get a NullReferenceException.
 
 ## Mixing static and dynamic values in strings using string interpolation
 
