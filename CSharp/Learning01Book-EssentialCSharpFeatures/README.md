@@ -140,6 +140,15 @@ public ViewResult Index() {
 
 You need to be right, otherwise you will get a NullReferenceException.
 
+10. Disabling null state analysis warnings
+```  
+#pragma warning disable CS8602
+...
+#pragma warning restore CS8602
+```
+
+
+
 ## Mixing static and dynamic values in strings using string interpolation
 
 ## Initializing and populate objects using object and collection initializers and target-typed new expressions
