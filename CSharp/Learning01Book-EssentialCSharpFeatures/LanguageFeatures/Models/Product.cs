@@ -19,7 +19,7 @@
                 Price = 48.95M
             };
 
-            return new Product?[] { null, kayak, lifejacket, null };
+            return new Product?[] { kayak, lifejacket, null };
 
         }
     }

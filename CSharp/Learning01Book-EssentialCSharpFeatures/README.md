@@ -148,8 +148,13 @@ You need to be right, otherwise you will get a NullReferenceException.
 ```
 
 
-
 ## Mixing static and dynamic values in strings using string interpolation
+1. String interpolation is the process of replacing placeholder's with value's
+```  
+return View(new string[] { $"Name: {products[0]?.Name}, Price: {products[0]?.Price:C2}" } );
+```
+
+
 
 ## Initializing and populate objects using object and collection initializers and target-typed new expressions
 
