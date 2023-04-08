@@ -4,9 +4,13 @@
     {
         public ViewResult Index() {
 
-            Product?[] products = Product.GetProducts();
+            Dictionary<string, Product> products = new Dictionary<string, Product>
+            {
+                { "Kayak", new Product { Name = "Kayak", Price = 275M} },
+                { "Lifejacket", new Product { Name = "Lifejacket", Price = 48.95M} }
+            };
             
-            return View(new string[] { $"Name: {products[0]?.Name}, Price: {products[1]?.Price:C2}" } );
+            return View("Index", products.Keys);
         }
     }
 }

@@ -155,8 +155,25 @@ return View(new string[] { $"Name: {products[0]?.Name}, Price: {products[0]?.Pri
 ```
 
 
-
 ## Initializing and populate objects using object and collection initializers and target-typed new expressions
+
+1. Using object initializer. Instead of:
+```  
+Product kayak = new Product();
+kayak.Name = "Kayak";
+kayak.Price = 275M;
+```
+
+We can have
+
+```  
+Product kayak = new Product
+{
+    Name = "Kayak",
+    Price = 275M
+};
+```
+
 
 ## Assigning a value for specific types using pattern matching
 
