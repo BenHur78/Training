@@ -174,6 +174,54 @@ Product kayak = new Product
 };
 ```
 
+2. Using collection initializer, allow us to specify the contents of the collection during the construction. Instead of:
+```  
+string[] names = new string[3];
+names[0] = "Bob";
+names[1] = "Joe";
+names[2] = "Alice";
+```
+
+We can have
+
+```  
+new string[] { "Bob", "Joe", "Alice" }
+```
+
+3. There is a new feature that simplifies the initialization of indexed collections like dictionaries. This is the traditional C# approach:
+```  
+public ViewResult Index() {
+
+    Dictionary<string, Product> products = new Dictionary<string, Product>
+    {
+        { "Kayak", new Product { Name = "Kayak", Price = 275M} },
+        { "Lifejacket", new Product { Name = "Lifejacket", Price = 48.95M} }
+    };
+    
+    return View("Index", products.Keys);
+}
+```
+
+With the new feature we reduce the number of _{_ and _}_ character's
+
+```  
+Dictionary<string, Product> products = new Dictionary<string, Product>
+{
+        ["Kayak"] = new Product { Name = "Kayak", Price = 275M} ,
+        ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M}
+};
+```
+
+4. We can simplify further the previous example using target-type new expression. We use "target-type" because the context is being used as a target for the compiler in order for it to infer the type.
+
+```  
+Dictionary<string, Product> products = new ()
+{
+        ["Kayak"] = new Product { Name = "Kayak", Price = 275M} ,
+        ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M}
+};
+```
+
 
 ## Assigning a value for specific types using pattern matching
 
