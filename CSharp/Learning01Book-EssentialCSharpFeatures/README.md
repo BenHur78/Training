@@ -32,6 +32,54 @@ Microsoft.Extensions.Logging
 
 
 ## Managing null values using nullable and non-nullable types
+1. Using default values for non-nullable properties. This is before not having initialization:
+
+```
+public string Name { get; set; }
+```
+2. Here we provide a default value for the non-nullable property, fixing the warning:
+```
+public string Name { get; set; } = string.Empty;
+```
+
+3. We have a warning here, Warning CS8625 Cannot convert null literal to non-nullable reference type.
+
+```
+public static Product[] GetProducts() {
+
+...
+    return new Product[] { kayak, lifejacket, null };
+
+}
+```
+
+4. Using _?_ we can turn a non-nullable type to nullable type
+
+```
+public static Product?[] GetProducts() {
+
+...
+    return new Product?[] { kayak, lifejacket, null };
+
+}
+```
+
+5. Some care when using the question mark when defining array's or collection's
+```
+
+Product?[] arr1 = new Product?[] { kayak, lifejacket, null }; //OK because a Product? can be null.
+Product?[] arr2 = null; //Not Ok because the array of products cannot be null itself!
+
+Product[]? arr1 = new Product?[] { kayak, lifejacket, null }; //Not Ok because the array of products contain a null reference but we are declaring a Product[] and not a Product?[]!
+
+Product[]? arr2 = null; //Ok because the array of products itself is allowed to be null.
+
+Product?[]? arr1 = new Product?[] { kayak, lifejacket, null }; //Ok because the array of products at the right hand side is not null and this is allowed and at the same time is also allowed for the array to contain a null reference. 
+
+Product?[]? arr2 = null; //Ok because the array of products is allowed to be null.
+
+```
+
 
 ## Mixing static and dynamic values in strings using string interpolation
 
