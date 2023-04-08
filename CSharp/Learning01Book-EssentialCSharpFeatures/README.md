@@ -80,6 +80,47 @@ Product?[]? arr2 = null; //Ok because the array of products is allowed to be nul
 
 ```
 
+6. Guarding against null in a verbose way. The compiler understand that after an if/else block the variable cannot be null, in this way a warning will be not generated.
+...
+public ViewResult Index() {
+
+    Product?[] products = Product.GetProducts();
+    
+    Product? product= products[0];
+    string val;
+
+    if(product != null)
+    {
+        val= product.Name;
+    }
+    else
+    {
+        val = "No value";
+    }
+
+    return View(new string[] { val });
+}
+```
+
+7. Using the null conditional operator ?. Be aware that the null conditional operator can return null, so the result need to be assigned to a nullable type like _string?_.
+
+...
+public ViewResult Index() {
+
+    Product?[] products = Product.GetProducts();
+    
+    string? val = products[0]?.Name;
+
+    if (val != null)
+    {
+        return View(new string[] { val });
+    }
+    
+    return View(new string[] { "No Value" });
+}
+```
+
+
 
 ## Mixing static and dynamic values in strings using string interpolation
 

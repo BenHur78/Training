@@ -6,8 +6,7 @@
 
             Product?[] products = Product.GetProducts();
             
-            Product? product= products[0];
-            string val;
+            string? val = products[0]?.Name;
             //if(val == null)
             //{
             //    Console.Error.WriteLine("Val is null");
@@ -17,16 +16,12 @@
             //    Console.Error.WriteLine("Val is not null");
             //}
 
-            if(product != null)
+            if (val != null)
             {
-                val= product.Name;
+                return View(new string[] { val });
             }
-            else
-            {
-                val = "No value";
-            }
-
-            return View(new string[] { val });
+            
+            return View(new string[] { "No Value" });
         }
     }
 }
