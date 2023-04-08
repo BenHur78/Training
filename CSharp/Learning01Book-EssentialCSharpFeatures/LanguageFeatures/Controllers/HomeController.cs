@@ -9,10 +9,16 @@
 
             for(int i = 0; i < data.Length; i++)
             {
-                if (data[i] is decimal d)
-                { 
-                    total += d;
+                switch(data[i])
+                {
+                    case decimal decimalValue:
+                        total+= decimalValue;
+                        break;
+                    case int intValue when intValue > 50:
+                        total+= intValue;
+                        break;
                 }
+
             }
             
             return View("Index", new string[] { $"Total: {total:C2}" });
