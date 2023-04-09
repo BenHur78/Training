@@ -225,11 +225,68 @@ Dictionary<string, Product> products = new ()
 
 ## Assigning a value for specific types using pattern matching
 
+1. Testing if an object is of a specific type (in this example a decimal) and if yes, we assign the value to a variable, is a form of pattern matching
+```  
+public ViewResult Index() {
+
+            object[] data = new object[] { 275M, 29.95M, "apple", "orange", 100, 10 };
+            decimal total = 0;
+
+            for(int i = 0; i < data.Length; i++)
+            {
+                if (data[i] is decimal d)
+                { 
+                    total += d;
+                }
+            }
+            
+            return View("Index", new string[] { $"Total: {total:C2}" });
+        }
+```
+
+2. We can use pattern matching in switch statement's:
+
+```  
+object[] data = new object[] { 275M, 29.95M, "apple", "orange", 100, 10 };
+decimal total = 0;
+
+for(int i = 0; i < data.Length; i++)
+{
+    switch(data[i])
+    {
+        case decimal decimalValue:
+            total+= decimalValue;
+            break;
+        case int intValue when intValue > 50:
+            total+= intValue;
+            break;
+    }
+
+}
+```
+
 ## Extending the functionality of a class without modifying it using extension methods
 
 ## Expressing functions and methods concisely using lambda expressions
 
 ## Defining a variable without explicitly declaring its type using var keyword
+
+1. Its possible to create an anonymous type that represents a view model object without to have to define a class or a struct. We create it using object initializers.
+```  
+public ViewResult Index()
+{
+    var products = new[]
+    {
+        new { MyName = "Kayak", MyPrice = 275M },
+        new { MyName = "Lifejacket", MyPrice = 48.95M },
+        new { MyName = "Soccer ball", MyPrice = 19.50M },
+        new { MyName = "Corner flag", MyPrice = 34.95M },
+    };
+    
+    return View(products.Select(p => p.GetType().ToString()));
+}
+```
+
 
 ## Modifying an interface without requiring changes in ints implementation classes using default implementation
 
