@@ -26,3 +26,9 @@ dotnet new xunit -o SimpleApp.Tests --framework net6.0
 dotnet sln add SimpleApp.Tests
 dotnet add SimpleApp.Tests reference SimpleApp
 ```
+
+- How to add Mock nuget package
+
+```
+dotnet add SimpleApp.Tests package Moq --version 4.16.1
+```
