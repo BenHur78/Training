@@ -25,3 +25,9 @@ dotnet add SportsSln/SportsStore.Tests reference SportsSln/SportsStore
 dotnet add SportsSln/SportsStore.Tests package Moq --version 4.16.1
 ```
 
+- Adding Entity Framework Core Packages. You need to execute the command in the _SportsStore_ folder
+```
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.0
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
+```
+
