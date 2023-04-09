@@ -2,6 +2,8 @@
 Commits
 ***
 
+Learning04Book - chapter 06 - adding README.md
+
 ***
 Using dotnet command
 ***
@@ -91,3 +93,11 @@ docker stop sql
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -e "MSSQL_PID=Express" -p 1433:1433 -d --name=sql --mount type=bind,src=C:\Dev\GitHubAlberto\Training\AspNetCore\Learning04Book\sql,target=/var/opt/mssql/data mcr.microsoft.com/mssql/server:latest
 
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -e "MSSQL_PID=Express" -p 1433:1433 -d --name=sql --v sqlData:/var/opt/mssql/data mcr.microsoft.com/mssql/server:latest
+
+***
+Other commands
+***
+1.1 How to kill a process in windows? This sometimes happen when we start an asp.net core application in VS Code and it says that some files
+are locked by another process.
+
+taskkill /pid 78032 /f
