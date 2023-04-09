@@ -402,6 +402,21 @@ Verbatim strings p82
 	Mono project, Xamarin, .NET Core are implementations of CLI (Common Language Infrastructure) specification
 	.NET Core distribution is not a complete carbon copy of the .NET Framework, is a subset.
 
+****************************************
+.Net Core Features
+****************************************
+
+IEnumerable
+	a. IAsyncEnumerable<T> Asynchronous Enumerable, Pro ASP.NET Core 6 9th edition Adam Freeman book p115
+	You have an asynchronous enumerable sequence of values that are generated over time. When the value in the sequence is generated you want the value to be accessible by the caller.
+
+IEqualityComparer
+	a. Pro ASP.NET Core 6 9th edition Adam Freeman book p134
+	According to chatGPT:
+	The IEqualityComparer interface in C# is used to define a custom method for comparing objects of a specified type for equality.
+	When you have a collection of objects, such as a List<T> or a Dictionary<TKey, TValue>, you may need to compare the objects in the 
+	collection to determine if they are equal to each other. By default, the Equals() method is used to perform this comparison, but in some 
+	cases, you may need a custom comparison logic.
 
 
 ****************************************
