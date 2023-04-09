@@ -2,7 +2,7 @@
 Commits
 ***
 
-Learning04Book - chapter 06 - adding README.md
+Learning04Book - chapter 06 - 
 
 ***
 Using dotnet command
@@ -49,9 +49,20 @@ dotnet tool install --global dotnet-ef --version 6.0.0
 dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli
 dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.1.113
 
-4. Templates
-4.1 web - ASP.Net Core Empty
-4.2 mvc - ASP.NET Core Web App (Model-View-Controller)
+4. Create a unit test project
+
+dotnet new xunit -o SimpleApp.Tests --framework net6.0
+
+dotnet sln add SimpleApp.Tests
+
+dotnet add SimpleApp.Tests reference SimpleApp
+
+5. Templates
+5.1 web - ASP.Net Core Empty
+5.2 mvc - ASP.NET Core Web App (Model-View-Controller)
+5.3 nunit - creates a project configured for NUnit framework
+5.4 xunit - creates a project configured for XUnit framework
+5.5 mstest - creates a project configured for MS Test framework, which is produced by Microsoft
 
 ***
 Using libman command

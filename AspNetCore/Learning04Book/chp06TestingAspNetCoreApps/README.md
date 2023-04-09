@@ -11,9 +11,18 @@ This is chapter 06. We will learn how to unit test asp.net core applications.
 
 ## dotnet commands
 
+- To create the web project
 ```
 dotnet new globaljson --sdk-version 6.0.403 --output Testing/SimpleApp
 dotnet new web --no-https --output Testing/SimpleApp --framework net6.0
 dotnet new sln -o Testing
 dotnet sln Testing add Testing/SimpleApp
+```
+
+- To create the unit test project
+
+```
+dotnet new xunit -o SimpleApp.Tests --framework net6.0
+dotnet sln add SimpleApp.Tests
+dotnet add SimpleApp.Tests reference SimpleApp
 ```
