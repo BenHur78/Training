@@ -2,16 +2,11 @@
 {
     public class HomeController : Controller
     {
-        public ViewResult Index()
+        public async Task<ViewResult> Index()
         {
-            IProductSelection cart = new ShoppingCart(
-                new Product { Name = "Kayak", Price = 275M },
-                new Product { Name = "Lifejacket", Price = 48.95M },
-                new Product { Name = "Soccer ball", Price = 19.50M },
-                new Product { Name = "Corner flag", Price = 34.95M }
-            );
+            long? length = await MyAsincMethods.GetPageLength();
             
-            return View(cart.Names);
+            return View(new string[] { $"Length: {length}" });
         }
     }
 }
