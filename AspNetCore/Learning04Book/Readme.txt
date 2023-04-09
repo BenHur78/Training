@@ -49,6 +49,10 @@ dotnet tool install --global dotnet-ef --version 6.0.0
 dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli
 dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.1.113
 
+4. Templates
+4.1 web - ASP.Net Core Empty
+4.2 mvc - ASP.NET Core Web App (Model-View-Controller)
+
 ***
 Using libman command
 ***
