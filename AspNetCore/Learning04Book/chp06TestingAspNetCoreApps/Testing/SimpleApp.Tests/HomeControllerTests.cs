@@ -1,18 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleApp.Controllers;
 using SimpleApp.Models;
+using Moq;
 
 namespace SimpleApp.Tests
 {
     public class HomeControllerTests
     {
-        class FakeDataSource : IDataSource
-        {
-            public FakeDataSource(Product[] data) => Products = data;
+        //class FakeDataSource : IDataSource
+        //{
+        //    public FakeDataSource(Product[] data) => Products = data;
 
-            public IEnumerable<Product> Products { get; set; }
+        //    public IEnumerable<Product> Products { get; set; }
 
-        }
+        //}
 
         [Fact]
         public void IndexActionModelIsComplete()
@@ -25,9 +26,11 @@ namespace SimpleApp.Tests
                 new Product { Name = "P3", Price = 110M }
             };
 
-            IDataSource data = new FakeDataSource(testData);
+            //IDataSource data = new FakeDataSource(testData);
+            var mock = new Mock<IDataSource>();
+            mock.SetupGet(m => m.Products).Returns(testData);
             var controller = new HomeController();
-            controller.dataSource= data;
+            controller.dataSource= mock.Object;
 
             Product[] products = new Product[] {
                 new Product { Name = "Kayak", Price = 275M },
@@ -39,7 +42,9 @@ namespace SimpleApp.Tests
             var model = viewResult?.ViewData.Model as IEnumerable<Product>;
 
             // Assert
-            Assert.Equal(data.Products, model, Comparer.Get<Product>( (p1, p2) => p1?.Name == p2?.Name && p1?.Price == p2?.Price));
+            Assert.Equal(testData, model, Comparer.Get<Product>( (p1, p2) => p1?.Name == p2?.Name && p1?.Price == p2?.Price));
+
+            mock.VerifyGet(m => m.Products, Times.Once);
         }
     }
 }
