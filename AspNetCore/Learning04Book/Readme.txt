@@ -57,6 +57,10 @@ dotnet sln add SimpleApp.Tests
 
 dotnet add SimpleApp.Tests reference SimpleApp
 
+6. Powershell commands
+6.1 To remove a file
+Remove-Item SimpleApp.Tests/UnitTest1.cs
+
 5. Templates
 5.1 web - ASP.Net Core Empty
 5.2 mvc - ASP.NET Core Web App (Model-View-Controller)
