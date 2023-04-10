@@ -16,6 +16,9 @@ var app = builder.Build();
 //app.MapGet("/", () => "Hello World!");
 
 app.UseStaticFiles();
+//There is a coupling here on "productPage", HomeController.Index parameter and PageLinkTagHelper. If we change 'productPage' to another name
+//you have to update HomeController.Index parameter and PageLinkTagHelper.
+app.MapControllerRoute("pagination", "Products/Page{productPage}", new { Controller = "Home", action = "Index" });
 app.MapDefaultControllerRoute();
 
 SeedData.EnsurePopulated(app);
