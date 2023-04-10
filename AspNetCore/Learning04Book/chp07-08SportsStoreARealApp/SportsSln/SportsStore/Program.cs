@@ -12,12 +12,15 @@ builder.Services.AddDbContext<StoreDbContext>(
 builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 
 builder.Services.AddRazorPages();
+builder.Services.AddDistributedMemoryCache(); //Enabling session. This sets up in-memory data store.
+builder.Services.AddSession(); //Enabling session
 
 var app = builder.Build();
 
 //app.MapGet("/", () => "Hello World!");
 
 app.UseStaticFiles();
+app.UseSession(); //Enabling session
 
 app.MapControllerRoute("catpage", "{category}/Page{productPage:int}", new { Controller = "Home", action = "Index" });
 
