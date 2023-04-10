@@ -15,7 +15,7 @@ namespace SportsStore.Controllers
             repository= repo;
         }
 
-        public IActionResult Index(int productPage = 1) //If its called without parameter, display products for the first page
+        public ViewResult Index(int productPage = 1) //If its called without parameter, display products for the first page
             => View(new ProductsListViewModel 
             {
                 Products = repository.Products
