@@ -78,6 +78,15 @@ dotnet ef database drop --force --context StoreDbContext
 ![Products table data image](./images/SeedingDataToDatabase.PNG)
 
 
+- Installing the Bootstrap Package
+```
+dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli
+dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.1.113
+libman init -p cdnjs
+libman install bootstrap@5.2.3 -d wwwroot/lib/bootstrap
+```
+
+
 ## Some images of the application
 
 1. Displaying product details

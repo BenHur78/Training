@@ -93,9 +93,12 @@ Using libman command
 1. Set LibraryManager (LibMan) to download packages from https://cdnjs.com repository
 libman init -p cdnjs
 
+note: run the command in the project folder where you want to setup this manager
 
 2. Installing the Bootstrap CSS Framework
 libman install bootstrap@5.2.3 -d wwwroot/lib/bootstrap
+
+note: run the command in the project folder where you want to install the bootstrap
 
 ***
 Using Docker to run a local SQL Server Express
