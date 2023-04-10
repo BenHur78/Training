@@ -81,4 +81,10 @@ dotnet ef database drop --force --context StoreDbContext
 ## Some images of the application
 
 1. Displaying product details
+
 ![Products details image](./images/DisplayingProductDetails.PNG)
+
+2. Displaying product details with pagination
+
+![Products details with pagination image](./images/DisplayingProductDetailsWithPagination.PNG)
+
