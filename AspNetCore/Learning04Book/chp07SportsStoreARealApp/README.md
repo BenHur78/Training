@@ -78,3 +78,7 @@ dotnet ef database drop --force --context StoreDbContext
 ![Products table data image](./images/SeedingDataToDatabase.PNG)
 
 
+## Some images of the application
+
+1. Displaying product details
+![Products details image](./images/DisplayingProductDetails.PNG)
