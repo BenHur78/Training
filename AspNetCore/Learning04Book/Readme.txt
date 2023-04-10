@@ -2,7 +2,8 @@
 Commits
 ***
 
-Learning04Book - chapter 06 - 
+Learning04Book - chapter 07 - 
+
 
 ***
 Using dotnet command
@@ -34,6 +35,10 @@ dotnet watch
 
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
 
+3.1. Adding a Package to a specific project called SimpleApp.Tests
+
+dotnet add SimpleApp.Tests package Moq --version 4.16.1
+
 3.2 How to list the packages in a project
 
 dotnet list package
@@ -57,16 +62,29 @@ dotnet sln add SimpleApp.Tests
 
 dotnet add SimpleApp.Tests reference SimpleApp
 
-6. Powershell commands
-6.1 To remove a file
+5. Powershell commands
+5.1 To remove a file
 Remove-Item SimpleApp.Tests/UnitTest1.cs
 
-5. Templates
-5.1 web - ASP.Net Core Empty
-5.2 mvc - ASP.NET Core Web App (Model-View-Controller)
-5.3 nunit - creates a project configured for NUnit framework
-5.4 xunit - creates a project configured for XUnit framework
-5.5 mstest - creates a project configured for MS Test framework, which is produced by Microsoft
+6. How to run unit tests
+note: This command need to run in the directory that contain the unit test project's.
+
+dotnet test
+
+7. Entity Framework Tool command's
+
+7.1 To create a initial migration
+dotnet ef migrations add Initial
+
+7.2 Resetting the database - this will delete the database in the database server
+dotnet ef database drop --force --context StoreDbContext
+
+8. Templates
+8.1 web - ASP.Net Core Empty
+8.2 mvc - ASP.NET Core Web App (Model-View-Controller)
+8.3 nunit - creates a project configured for NUnit framework
+8.4 xunit - creates a project configured for XUnit framework
+8.5 mstest - creates a project configured for MS Test framework, which is produced by Microsoft
 
 ***
 Using libman command
@@ -113,6 +131,8 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -e "MSSQL_PID=Express
 
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -e "MSSQL_PID=Express" -p 1433:1433 -d --name=sql --v sqlData:/var/opt/mssql/data mcr.microsoft.com/mssql/server:latest
 
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -e "MSSQL_PID=Express" -p 1433:1433 -d --name=sql --mount type=bind,src=C:\Dev\sql,target=/var/opt/mssql/data mcr.microsoft.com/mssql/server:latest
+
 ***
 Other commands
 ***
@@ -120,3 +140,11 @@ Other commands
 are locked by another process.
 
 taskkill /pid 78032 /f
+
+2.1 To test a connection string create a file TestConnectionString.udl
+2.2. After file creation, double click in the file
+2.3. Select _Connection_ tab
+2.4. On _server name_ type _localhost,1433_ 
+2.5. On _Use a specific user name and password_ type _sa_
+2.6. On _Select the database on the server_ select _master_
+2.7. Click _Test Connection_

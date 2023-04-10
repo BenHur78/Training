@@ -25,9 +25,56 @@ dotnet add SportsSln/SportsStore.Tests reference SportsSln/SportsStore
 dotnet add SportsSln/SportsStore.Tests package Moq --version 4.16.1
 ```
 
+- To use Microsoft SQL Express using Docker
+1. Create a folder to store database files. I have created _sql_ folder in the directory _C:\Dev_
+2. Run the following command in a terminal window
+```
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -e "MSSQL_PID=Express" -p 1433:1433 -d --name=sql --mount type=bind,src=C:\Dev\sql,target=/var/opt/mssql/data mcr.microsoft.com/mssql/server:latest
+```
+
+
+- To test a connection string create a file _TestConnectionString.udl_
+1. After file creation, double click in the file
+2. Select _Connection_ tab
+3. On _server name_ type _localhost,1433_ 
+4. On _Use a specific user name and password_ type _sa_
+5. On _Select the database on the server_ select _master_
+6. Click _Test Connection_
+
+![Test connection string image](./images/TestConnectionString.PNG)
+
+- To define a connection string edit _appsettings.json_ file
+```
+"AllowedHosts": "*",
+  "ConnectionStrings": {
+    "SportsStoreConnection": "Persist Security Info=False;User ID=sa;Password=MyPass@word;Initial Catalog=SportsStore;Data Source=localhost,1433;MultipleActiveResultSets=true"
+  }
+```
+
 - Adding Entity Framework Core Packages. You need to execute the command in the _SportsStore_ folder
 ```
 dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.0
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
 ```
+
+- Installing the Entity Framework Core Tool Packages
+```
+dotnet tool uninstall --global dotnet-ef
+dotnet tool install --global dotnet-ef --version 6.0.0
+```
+
+- Creating the database migration
+```
+dotnet ef migrations add Initial
+```
+
+- Resetting the database
+```
+dotnet ef database drop --force --context StoreDbContext
+```
+
+- After seeding data to the database
+
+![Products table data image](./images/SeedingDataToDatabase.PNG)
+
 
