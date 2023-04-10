@@ -30,6 +30,7 @@ app.MapControllerRoute("category", "{category}", new { Controller = "Home", acti
 app.MapControllerRoute("pagination", "Products/Page{productPage}", new { Controller = "Home", action = "Index" });
 
 app.MapDefaultControllerRoute();
+app.MapRazorPages();
 
 SeedData.EnsurePopulated(app);
 
