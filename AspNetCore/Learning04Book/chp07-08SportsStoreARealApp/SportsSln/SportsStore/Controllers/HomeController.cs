@@ -15,10 +15,11 @@ namespace SportsStore.Controllers
             repository= repo;
         }
 
-        public ViewResult Index(int productPage = 1) //If its called without parameter, display products for the first page
+        public ViewResult Index(string? category, int productPage = 1) //If its called without parameter, display products for the first page
             => View(new ProductsListViewModel 
             {
                 Products = repository.Products
+                .Where(p => category == null || p.Category == category)
                 .OrderBy(p => p.ProductID)
                 .Skip((productPage -1) * PageSize) //Skip the products that occur before the start of the current page
                 .Take(PageSize),
@@ -27,7 +28,8 @@ namespace SportsStore.Controllers
                     CurrentPage= productPage,
                     ItemsPerPage=PageSize,
                     TotalItems = repository.Products.Count()
-                }
+                },
+                CurrentCategory = category
             }); //Take the number of products specified by PageSize field
     }
 }
