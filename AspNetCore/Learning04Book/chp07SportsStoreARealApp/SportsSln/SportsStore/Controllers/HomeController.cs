@@ -18,6 +18,6 @@ namespace SportsStore.Controllers
             => View(repository.Products
                 .OrderBy(p => p.ProductID)
                 .Skip((productPage -1) * PageSize) //Skip the products that occur before the start of the current page
-                .Take(PageSize));
+                .Take(PageSize)); //Take the number of products specified by PageSize field
     }
 }
