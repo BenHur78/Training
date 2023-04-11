@@ -3,7 +3,7 @@ This is chapter 07. We will learn how to create a real application.
 
 ## dotnet commands
 
-- To create the web project
+1. To create the web project
 ```
 dotnet new globaljson --sdk-version 6.0.403 --output SportsSln/SportsStore
 dotnet new web --no-https --output SportsSln/SportsStore --framework net6.0
@@ -12,7 +12,7 @@ dotnet sln SportsSln add SportsSln/SportsStore
 
 ```
 
-- To create the unit test
+2. To create the unit test
 
 ```
 dotnet new xunit -o SportsSln/SportsStore.Tests --framework net6.0
@@ -20,12 +20,12 @@ dotnet sln SportsSln add SportsSln/SportsStore.Tests
 dotnet add SportsSln/SportsStore.Tests reference SportsSln/SportsStore
 ```
 
-- Adding Moq nuget package
+3. Adding Moq nuget package
 ```
 dotnet add SportsSln/SportsStore.Tests package Moq --version 4.16.1
 ```
 
-- To use Microsoft SQL Express using Docker
+4. To use Microsoft SQL Express using Docker
 1. Create a folder to store database files. I have created _sql_ folder in the directory _C:\Dev_
 2. Run the following command in a terminal window
 ```
@@ -33,7 +33,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -e "MSSQL_PID=Express
 ```
 
 
-- To test a connection string create a file _TestConnectionString.udl_
+5. To test a connection string create a file _TestConnectionString.udl_
 1. After file creation, double click in the file
 2. Select _Connection_ tab
 3. On _server name_ type _localhost,1433_ 
@@ -43,7 +43,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -e "MSSQL_PID=Express
 
 ![Test connection string image](./images/TestConnectionString.PNG)
 
-- To define a connection string edit _appsettings.json_ file
+6. To define a connection string edit _appsettings.json_ file
 ```
 "AllowedHosts": "*",
   "ConnectionStrings": {
@@ -51,34 +51,34 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -e "MSSQL_PID=Express
   }
 ```
 
-- Adding Entity Framework Core Packages. You need to execute the command in the _SportsStore_ folder
+7. Adding Entity Framework Core Packages. You need to execute the command in the _SportsStore_ folder
 ```
 dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.0
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.0
 ```
 
-- Installing the Entity Framework Core Tool Packages
+8. Installing the Entity Framework Core Tool Packages
 ```
 dotnet tool uninstall --global dotnet-ef
 dotnet tool install --global dotnet-ef --version 6.0.0
 ```
 
-- Creating the database migration
+9. Creating the database migration
 ```
 dotnet ef migrations add Initial
 ```
 
-- Resetting the database
+10. Resetting the database
 ```
 dotnet ef database drop --force --context StoreDbContext
 ```
 
-- After seeding data to the database
+11. After seeding data to the database
 
 ![Products table data image](./images/SeedingDataToDatabase.PNG)
 
 
-- Installing the Bootstrap Package
+12. Installing the Bootstrap Package
 ```
 dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli
 dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.1.113
@@ -86,13 +86,19 @@ libman init -p cdnjs
 libman install bootstrap@5.2.3 -d wwwroot/lib/bootstrap
 ```
 
-- Font Awesome packate, is an excellent set of open source icons. Run the following command in the directory _SportsSln\SportsStore_.
+13. Font Awesome packate, is an excellent set of open source icons. Run the following command in the directory _SportsSln\SportsStore_.
 
 ```
 https://fontawesome.com/
 
 libman install font-awesome@5.15.4 -d wwwroot/lib/font-awesome
 ```
+
+14.  Creatint a migration that will create the Order table. Run this command in the directory _SportsSln\SportsStore_.
+```
+dotnet ef migrations add Order
+```
+
 
 ## Chapter 07 and 08 - some images of the application
 
