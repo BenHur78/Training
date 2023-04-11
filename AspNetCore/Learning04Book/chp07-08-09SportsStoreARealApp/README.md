@@ -126,3 +126,8 @@ libman install font-awesome@5.15.4 -d wwwroot/lib/font-awesome
 2. Cart summary widget
 
 ![Remove product button from cart image](./images/CartSummaryWidget.PNG)
+
+3. The checkout button
+
+![Remove product button from cart image](./images/CheckoutButtonInTheCart.PNG)
+
