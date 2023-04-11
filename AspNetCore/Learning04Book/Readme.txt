@@ -2,7 +2,7 @@
 Commits
 ***
 
-Learning04Book - chapter 09 - adding the cart summary widget
+Learning04Book - chapter 09 - implementing order processing - extending the database
 
 ***
 Using dotnet command
@@ -77,6 +77,9 @@ dotnet ef migrations add Initial
 
 7.2 Resetting the database - this will delete the database in the database server
 dotnet ef database drop --force --context StoreDbContext
+
+7.3 To re-create the dtabase and apply the migrations
+dotnet ef database update --context StoreDbContext
 
 8. Templates
 8.1 web - ASP.Net Core Empty

@@ -10,6 +10,7 @@ builder.Services.AddDbContext<StoreDbContext>(
 );
 
 builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
+builder.Services.AddScoped<IOrderRepository, EFOrderRepository>();
 
 builder.Services.AddRazorPages();
 builder.Services.AddDistributedMemoryCache(); //Enabling session. This sets up in-memory data store.
