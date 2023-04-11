@@ -2,8 +2,7 @@
 Commits
 ***
 
-Learning04Book - chapter 07 - 
-
+Learning04Book - chapter 09 - adding the cart summary widget
 
 ***
 Using dotnet command
@@ -99,6 +98,10 @@ note: run the command in the project folder where you want to setup this manager
 libman install bootstrap@5.2.3 -d wwwroot/lib/bootstrap
 
 note: run the command in the project folder where you want to install the bootstrap
+
+3. To install Font Awesome packate
+libman install font-awesome@6.4.0 -d wwwroot/lib/font-awesome
+
 
 ***
 Using Docker to run a local SQL Server Express

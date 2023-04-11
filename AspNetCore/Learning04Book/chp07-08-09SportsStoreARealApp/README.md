@@ -86,8 +86,15 @@ libman init -p cdnjs
 libman install bootstrap@5.2.3 -d wwwroot/lib/bootstrap
 ```
 
+- Font Awesome packate, is an excellent set of open source icons
 
-## Some images of the application
+```
+https://fontawesome.com/
+
+libman install font-awesome@5.15.4 -d wwwroot/lib/font-awesome
+```
+
+## Chapter 07 and 08 - some images of the application
 
 1. Displaying product details
 
@@ -109,3 +116,10 @@ libman install bootstrap@5.2.3 -d wwwroot/lib/bootstrap
 5. Shopping cart
 
 ![SportsStore application image](./images/ShoppingCart.PNG)
+
+## Chapter 09 - some images of the application
+
+1. Remove product button from cart
+
+![Remove product button from cart image](./images/RemoveProductFromCart.PNG)
+
