@@ -86,7 +86,7 @@ libman init -p cdnjs
 libman install bootstrap@5.2.3 -d wwwroot/lib/bootstrap
 ```
 
-- Font Awesome packate, is an excellent set of open source icons
+- Font Awesome packate, is an excellent set of open source icons. Run the following command in the directory _SportsSln\SportsStore_.
 
 ```
 https://fontawesome.com/
@@ -123,3 +123,6 @@ libman install font-awesome@5.15.4 -d wwwroot/lib/font-awesome
 
 ![Remove product button from cart image](./images/RemoveProductFromCart.PNG)
 
+2. Cart summary widget
+
+![Remove product button from cart image](./images/CartSummaryWidget.PNG)
