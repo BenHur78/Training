@@ -14,6 +14,9 @@ builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 builder.Services.AddRazorPages();
 builder.Services.AddDistributedMemoryCache(); //Enabling session. This sets up in-memory data store.
 builder.Services.AddSession(); //Enabling session
+//Creating a service for Cart
+builder.Services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var app = builder.Build();
 
