@@ -41,7 +41,7 @@ app.MapControllerRoute("pagination", "Products/Page{productPage}", new { Control
 app.MapDefaultControllerRoute();
 app.MapRazorPages();
 app.MapBlazorHub();
-app.MapFallbackToPage("admin/{*catchall}", "Admin/Index");
+app.MapFallbackToPage("/admin/{*catchall}", "Admin/Index");
 
 SeedData.EnsurePopulated(app);
 
