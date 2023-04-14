@@ -18,6 +18,8 @@ builder.Services.AddSession(); //Enabling session
 //Creating a service for Cart
 builder.Services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+//End - Creating a service for Cart
+builder.Services.AddServerSideBlazor();
 
 var app = builder.Build();
 
@@ -38,6 +40,8 @@ app.MapControllerRoute("pagination", "Products/Page{productPage}", new { Control
 
 app.MapDefaultControllerRoute();
 app.MapRazorPages();
+app.MapBlazorHub();
+app.MapFallbackToPage("admin/{*catchall}", "Admin/Index");
 
 SeedData.EnsurePopulated(app);
 
