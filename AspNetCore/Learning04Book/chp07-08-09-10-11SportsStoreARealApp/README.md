@@ -130,8 +130,6 @@ dotnet ef migrations add Initial --context AppIdentityDbContext
 dotnet ef database update --context AppIdentityDbContext
 ```
 
-
-
 ## Chapter 07 and 08 - some images of the application
 
 1. Displaying product details
@@ -196,3 +194,9 @@ dotnet ef database update --context AppIdentityDbContext
 ![Products deletion image](./images/AdministrationDeletingProduct1.PNG)
 
 ## Chapter 11 - some images of the application
+
+1. Listing Asp.Net Identity Users
+
+![Products deletion image](./images/IdentityListingUsers.PNG)
+
+
