@@ -2,8 +2,8 @@
 Commits
 ***
 
-Learning04Book - chapter 10 - starting chapter
-Learning04Book - chapter 10 - blazor server - managing orders - displaying orders to the administrator
+Learning04Book - chapter 11 - starting chapter
+Learning04Book - chapter 11 - creating the context class
 
 ***
 Using dotnet command
@@ -54,6 +54,12 @@ dotnet tool install --global dotnet-ef --version 6.0.0
 dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli
 dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.1.113
 
+3.5 Installing the Identity Package for Entity Framework Core
+
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 6.0.0
+
+note: chapter 11, we created a microsoft sql server database for asp.net identity
+
 4. Create a unit test project
 
 dotnet new xunit -o SimpleApp.Tests --framework net6.0
@@ -82,9 +88,11 @@ dotnet ef database drop --force --context StoreDbContext
 7.3 To re-create the dtabase and apply the migrations
 dotnet ef database update --context StoreDbContext
 
-7.4 To remove a previously created migration
+7.4 To remove a previously created migration (this only applies to the project, not to the database)
 dotnet ef migrations remove
 
+7.5 To update the database to a previously migration
+dotnet ef database update NameOfTheMigration
 
 8. Templates
 8.1 web - ASP.Net Core Empty
