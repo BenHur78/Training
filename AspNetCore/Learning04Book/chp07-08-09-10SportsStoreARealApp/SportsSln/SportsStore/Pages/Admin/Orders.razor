@@ -38,7 +38,7 @@
     
     private void UpdateOrder(int id, bool shipValue)
     {
-        Order? o = Repository.Orders.FirstOrDefault(o => o.OrderID == id);
+        Order? o = Repository.Orders.FirstOrDefault(o => o.OrderId == id);
         
         if (o != null)
         {

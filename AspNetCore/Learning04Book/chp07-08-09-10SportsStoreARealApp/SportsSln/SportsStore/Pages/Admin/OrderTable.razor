@@ -9,7 +9,7 @@
                 <td>@o.Name</td><td>@o.Zip</td><th>Product</th><th>Quantity</th>
                 <td>
                     <button class="btn btn-sm btn-danger"
-                        @onclick="@(e => OrderSelected.InvokeAsync(o.OrderID))">
+                        @onclick="@(e => OrderSelected.InvokeAsync(o.OrderId))">
                         @ButtonLabel
                     </button>
                 </td>
