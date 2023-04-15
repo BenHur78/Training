@@ -169,8 +169,13 @@ The migration '20230415120712_ShippedOrders2' has already been applied to the da
 
 4. Product details administration
 
-![Products list administration image](./images/AdministrationProductDetails.PNG)
+![Products details administration image](./images/AdministrationProductDetails.PNG)
 
 5. Using the editor to edit a Product in the administration
 
-![Products list administration image](./images/AdministrationUsingTheEditor.PNG)
+![The editor image](./images/AdministrationUsingTheEditor.PNG)
+
+6. Product deletion in the administration
+
+![Products deletion image](./images/AdministrationDeletingProduct1.PNG)
+
