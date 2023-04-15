@@ -99,6 +99,22 @@ libman install font-awesome@5.15.4 -d wwwroot/lib/font-awesome
 dotnet ef migrations add Order
 ```
 
+15. Creatint a migration to update Order with shipped property
+```
+dotnet ef migrations add ShippedOrders
+```
+
+16. I did a mistake when creating ShippedOrders. I want to remove a migration that was applied to the database:
+```
+dotnet ef database update 20230411225200_Order
+dotnet ef migrations remove
+```
+1. The first command, rollback the database to a previously migration, the migration _20230411225200_Order_
+2. The second command removes the migration _20230415100918_ShippedOrders_ in the project.
+3. If we run first the second command you can get this error message:
+```
+The migration '20230415120712_ShippedOrders2' has already been applied to the database. Revert it and try again. If the migration has been applied to other databases, consider reverting its changes using a new migration instead.
+```
 
 ## Chapter 07 and 08 - some images of the application
 
@@ -141,4 +157,8 @@ dotnet ef migrations add Order
 
 1. Blazor setup 
 
-![Remove product button from cart image](./images/BlazorSetup.PNG)
+![Blazor setup image](./images/BlazorSetup.PNG)
+
+2. Orders administration
+
+![Orders administration image](./images/AdministrationOrders.PNG)

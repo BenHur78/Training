@@ -2,7 +2,8 @@
 Commits
 ***
 
-Learning04Book - chapter 09 - implementing order processing - extending the database
+Learning04Book - chapter 10 - starting chapter
+Learning04Book - chapter 10 - blazor server - managing orders - displaying orders to the administrator
 
 ***
 Using dotnet command
@@ -72,7 +73,7 @@ dotnet test
 
 7. Entity Framework Tool command's
 
-7.1 To create a initial migration
+7.1 To create a initial migration or new migration's
 dotnet ef migrations add Initial
 
 7.2 Resetting the database - this will delete the database in the database server
@@ -80,6 +81,10 @@ dotnet ef database drop --force --context StoreDbContext
 
 7.3 To re-create the dtabase and apply the migrations
 dotnet ef database update --context StoreDbContext
+
+7.4 To remove a previously created migration
+dotnet ef migrations remove
+
 
 8. Templates
 8.1 web - ASP.Net Core Empty
