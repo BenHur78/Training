@@ -116,6 +116,12 @@ dotnet ef migrations remove
 The migration '20230415120712_ShippedOrders2' has already been applied to the database. Revert it and try again. If the migration has been applied to other databases, consider reverting its changes using a new migration instead.
 ```
 
+17. Installing the Identity Package for EntityFramework Core
+```
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 6.0.0
+```
+
+
 ## Chapter 07 and 08 - some images of the application
 
 1. Displaying product details
