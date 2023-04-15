@@ -179,3 +179,4 @@ The migration '20230415120712_ShippedOrders2' has already been applied to the da
 
 ![Products deletion image](./images/AdministrationDeletingProduct1.PNG)
 
+## Chapter 11 - some images of the application
