@@ -120,6 +120,16 @@ The migration '20230415120712_ShippedOrders2' has already been applied to the da
 ```
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 6.0.0
 ```
+18. Creating the Identity migration
+```
+dotnet ef migrations add Initial --context AppIdentityDbContext
+```
+
+19. Creating the Identity database
+```
+dotnet ef database update --context AppIdentityDbContext
+```
+
 
 
 ## Chapter 07 and 08 - some images of the application

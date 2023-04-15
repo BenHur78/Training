@@ -3,7 +3,7 @@ Commits
 ***
 
 Learning04Book - chapter 11 - starting chapter
-Learning04Book - chapter 11 - creating the context class
+Learning04Book - chapter 11 - creating and applying the database migration
 
 ***
 Using dotnet command
@@ -81,6 +81,9 @@ dotnet test
 
 7.1 To create a initial migration or new migration's
 dotnet ef migrations add Initial
+
+note: if you have multiple context's you have to use --context
+dotnet ef migrations add Initial --context AppIdentityDbContext
 
 7.2 Resetting the database - this will delete the database in the database server
 dotnet ef database drop --force --context StoreDbContext
