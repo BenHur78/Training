@@ -7,7 +7,7 @@ namespace SportsStore.Models
     public static class IdentitySeedData
     {
         private const string adminUser = "Admin";
-        private const StringInfo adminPassword = "Secret123$";
+        private const string adminPassword = "Secret123$";
 
         public static async void EnsurePopulated(IApplicationBuilder app)
         {
@@ -21,9 +21,9 @@ namespace SportsStore.Models
 
             UserManager<IdentityUser> userManager = app.ApplicationServices.CreateScope()
                 .ServiceProvider
-                .GetRequiredService<UserManeger<IdentityUser>>();
+                .GetRequiredService<UserManager<IdentityUser>>();
 
-            IdentityUser user == await userManager.FindByNameAsync(adminUser);
+            IdentityUser user = await userManager.FindByNameAsync(adminUser);
 
             if(user == null)
             {
