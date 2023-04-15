@@ -162,3 +162,7 @@ The migration '20230415120712_ShippedOrders2' has already been applied to the da
 2. Orders administration
 
 ![Orders administration image](./images/AdministrationOrders.PNG)
+
+3. Products list administration
+
+![Products list administration image](./images/AdministrationPresentingListProducts.PNG)
