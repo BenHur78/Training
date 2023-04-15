@@ -166,3 +166,11 @@ The migration '20230415120712_ShippedOrders2' has already been applied to the da
 3. Products list administration
 
 ![Products list administration image](./images/AdministrationPresentingListProducts.PNG)
+
+4. Product details administration
+
+![Products list administration image](./images/AdministrationProductDetails.PNG)
+
+5. Using the editor to edit a Product in the administration
+
+![Products list administration image](./images/AdministrationUsingTheEditor.PNG)
