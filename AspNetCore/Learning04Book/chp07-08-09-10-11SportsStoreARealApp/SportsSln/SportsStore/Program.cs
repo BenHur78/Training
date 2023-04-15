@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SportsStore.Models;
 
@@ -21,12 +22,19 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 //End - Creating a service for Cart
 builder.Services.AddServerSideBlazor();
 
+builder.Services.AddDbContext<AppIdentityDbContext>(options =>
+    options.UseSqlServer(builder.Configuration["ConnectionStrings:IdentityConnection"]));
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>();
+
 var app = builder.Build();
 
 //app.MapGet("/", () => "Hello World!");
 
 app.UseStaticFiles();
 app.UseSession(); //Enabling session
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllerRoute("catpage", "{category}/Page{productPage:int}", new { Controller = "Home", action = "Index" });
 
