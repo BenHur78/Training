@@ -137,3 +137,8 @@ dotnet ef migrations add Order
 
 ![Remove product button from cart image](./images/CheckoutButtonInTheCart.PNG)
 
+## Chapter 10 - some images of the application
+
+1. Blazor setup 
+
+![Remove product button from cart image](./images/BlazorSetup.PNG)
