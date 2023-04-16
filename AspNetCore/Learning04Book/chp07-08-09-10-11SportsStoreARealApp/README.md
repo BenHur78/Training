@@ -1,5 +1,11 @@
 # Introduction 
-This is chapter 07. We will learn how to create a real application.
+We will learn how to create a real application, following chapter's from 07 to 11.
+
+* Chapter 07 - SportsStore: A real application
+* Chapter 08 - SportsStore: Navigation and Cart
+* Chapter 09 - SportsStore: Completing the Cart
+* Chapter 10 - SportsStore: Administration
+* Chapter 11 - SportsStore: Security and Deployment
 
 ## dotnet commands
 
@@ -63,7 +69,7 @@ dotnet tool uninstall --global dotnet-ef
 dotnet tool install --global dotnet-ef --version 6.0.0
 ```
 
-9. Creating the database migration
+9. Creating the database migration (eg Initial is only the migration name, we can give the name we want)
 ```
 dotnet ef migrations add Initial
 ```
@@ -73,12 +79,12 @@ dotnet ef migrations add Initial
 dotnet ef database drop --force --context StoreDbContext
 ```
 
-11. After seeding data to the database
+11. The result of seeding data to the database (database initialization)
 
 ![Products table data image](./images/SeedingDataToDatabase.PNG)
 
 
-12. Installing the Bootstrap Package
+12. Installing the Bootstrap Package (to style the web application)
 ```
 dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli
 dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.1.113
@@ -86,7 +92,7 @@ libman init -p cdnjs
 libman install bootstrap@5.2.3 -d wwwroot/lib/bootstrap
 ```
 
-13. Font Awesome packate, is an excellent set of open source icons. Run the following command in the directory _SportsSln\SportsStore_.
+13. Font Awesome package, is an excellent set of open source icons (eg shoppping cart icon). Run the following command in the directory _SportsSln\SportsStore_.
 
 ```
 https://fontawesome.com/
@@ -99,41 +105,66 @@ libman install font-awesome@5.15.4 -d wwwroot/lib/font-awesome
 dotnet ef migrations add Order
 ```
 
-15. Creatint a migration to update Order with shipped property
+15. Creatint a migration to update Order with shipped property (to represent if the order was shipped or not)
 ```
 dotnet ef migrations add ShippedOrders
 ```
 
-16. I did a mistake when creating ShippedOrders. I want to remove a migration that was applied to the database:
+16. I did a mistake when creating ShippedOrders. I want to remove/revert a migration that was applied to the database:
 ```
 dotnet ef database update 20230411225200_Order
 dotnet ef migrations remove
 ```
 1. The first command, rollback the database to a previously migration, the migration _20230411225200_Order_
 2. The second command removes the migration _20230415100918_ShippedOrders_ in the project.
-3. If we run first the second command you can get this error message:
+3. If we run first the second command (eg remove) you can get this error message:
 ```
 The migration '20230415120712_ShippedOrders2' has already been applied to the database. Revert it and try again. If the migration has been applied to other databases, consider reverting its changes using a new migration instead.
 ```
 
-17. Installing the Identity Package for EntityFramework Core
+17. Installing the Identity Package for EntityFramework Core (eg related to secure the web application)
 ```
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 6.0.0
 ```
+
 18. Creating the Identity migration
 ```
 dotnet ef migrations add Initial --context AppIdentityDbContext
 ```
 
-19. Creating the Identity database
+19. Creating the Identity database (this will create a database in microsoft sql server)
 ```
 dotnet ef database update --context AppIdentityDbContext
 ```
 
-20. Creating release artifacts to be sent to docker image
+20. Steps to update our production environment based on docker container's. I am using Visual Studio code (VSC) but you can use other terminal type to run these commands.
+
+1. We will have a docker container for the web application and a docker container for the database
+2. To create the web application binaries run the following command in _SportsStore_ directory:
 ```
 dotnet publish -C Release
 ```
+
+3. Now in VSC open 2 powershell terminal windows. We will do a docker-compose build to create the 2 images, one for the web application and another one for the database
+```
+docker-compose build 
+```
+
+![The result of the build image](./images/DockerComposeFirstBuild.PNG)
+
+4. Then to start the database docker container run this command:
+```
+docker-compose up sqlserver
+```
+
+![The result of starting database container image](./images/DockerComposeStartingDatabase.PNG)
+
+5. Finally, to start the web application docker container run this command:
+```
+docker-compose up sportsstore
+```
+
+![The result of starting web application container image](./images/DockerComposeStartingWebApplication.PNG)
 
 
 ## Chapter 07 and 08 - some images of the application
@@ -204,7 +235,3 @@ dotnet publish -C Release
 1. Listing Asp.Net Identity Users
 
 ![Products deletion image](./images/IdentityListingUsers.PNG)
-
-2. The first time we did a docker-compose build
-
-![docker-compose build result image](./images/DockerComposeFirstBuild.PNG)

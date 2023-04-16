@@ -1,6 +1,6 @@
 ﻿version: "3"
 services:
-  sportstore:
+  sportsstore:
     build: .
     ports:
       - "5000:5000"
