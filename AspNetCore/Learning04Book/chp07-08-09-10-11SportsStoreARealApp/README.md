@@ -164,7 +164,9 @@ docker-compose up sqlserver
 docker-compose up sportsstore
 ```
 
-![The result of starting web application container image](./images/DockerComposeStartingWebApplication.PNG)
+6. These are the containers in windows machine that uses Docker Desktop. The first container (1) contain the database we use for the development environment. The second group of containers (2) represents our production environment.
+
+![Docker desktop image](./images/DockerDesktopContainers.PNG)
 
 
 ## Chapter 07 and 08 - some images of the application
