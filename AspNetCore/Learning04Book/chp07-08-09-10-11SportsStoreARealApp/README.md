@@ -130,6 +130,12 @@ dotnet ef migrations add Initial --context AppIdentityDbContext
 dotnet ef database update --context AppIdentityDbContext
 ```
 
+20. Creating release artifacts to be sent to docker image
+```
+dotnet publish -C Release
+```
+
+
 ## Chapter 07 and 08 - some images of the application
 
 1. Displaying product details
@@ -199,4 +205,6 @@ dotnet ef database update --context AppIdentityDbContext
 
 ![Products deletion image](./images/IdentityListingUsers.PNG)
 
+2. The first time we did a docker-compose build
 
+![docker-compose build result image](./images/DockerComposeFirstBuild.PNG)

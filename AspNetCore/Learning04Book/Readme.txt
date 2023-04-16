@@ -3,7 +3,7 @@ Commits
 ***
 
 Learning04Book - chapter 11 - starting chapter
-Learning04Book - chapter 11 - creating and applying the database migration
+Learning04Book - chapter 11 - creating the docker image - creating the docker configuration files
 
 ***
 Using dotnet command
@@ -91,18 +91,27 @@ dotnet ef database drop --force --context StoreDbContext
 7.3 To re-create the dtabase and apply the migrations
 dotnet ef database update --context StoreDbContext
 
+dotnet ef database update --context AppIdentityDbContext
+
 7.4 To remove a previously created migration (this only applies to the project, not to the database)
 dotnet ef migrations remove
 
 7.5 To update the database to a previously migration
 dotnet ef database update NameOfTheMigration
 
-8. Templates
-8.1 web - ASP.Net Core Empty
-8.2 mvc - ASP.NET Core Web App (Model-View-Controller)
-8.3 nunit - creates a project configured for NUnit framework
-8.4 xunit - creates a project configured for XUnit framework
-8.5 mstest - creates a project configured for MS Test framework, which is produced by Microsoft
+8. Related to Docker
+8.1 Creating release artifacts that will be sent to docker image
+
+dotnet publish -C Release
+
+note: this create binaries in release mode in the bin/Release folder. The docker image will be created based on this folder.
+
+9. Templates
+9.1 web - ASP.Net Core Empty
+9.2 mvc - ASP.NET Core Web App (Model-View-Controller)
+9.3 nunit - creates a project configured for NUnit framework
+9.4 xunit - creates a project configured for XUnit framework
+9.5 mstest - creates a project configured for MS Test framework, which is produced by Microsoft
 
 ***
 Using libman command
