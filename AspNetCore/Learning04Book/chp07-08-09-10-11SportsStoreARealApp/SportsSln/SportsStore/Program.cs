@@ -30,6 +30,17 @@ var app = builder.Build();
 
 //app.MapGet("/", () => "Hello World!");
 
+if(app.Environment.IsProduction())
+{
+    app.UseExceptionHandler("/error");
+}
+
+app.UseRequestLocalization(options => {
+    options.AddSupportedCultures("en-US")
+    .AddSupportedUICultures("en-US")
+    .SetDefaultCulture("en-US")
+});
+
 app.UseStaticFiles();
 app.UseSession(); //Enabling session
 
