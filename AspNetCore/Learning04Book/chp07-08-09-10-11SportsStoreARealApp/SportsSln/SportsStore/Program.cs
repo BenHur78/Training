@@ -38,7 +38,7 @@ if(app.Environment.IsProduction())
 app.UseRequestLocalization(options => {
     options.AddSupportedCultures("en-US")
     .AddSupportedUICultures("en-US")
-    .SetDefaultCulture("en-US")
+    .SetDefaultCulture("en-US");
 });
 
 app.UseStaticFiles();
