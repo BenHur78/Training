@@ -1,5 +1,5 @@
 # Introduction 
-Learnings related to JRuby.
+Learnings related to JRuby and Ruby.
 
 # Requirements
 We use *jruby-9.1.17.0* installed in *C:\Ptin\JRubyBinaries\jruby-9.1.17.0* directory
