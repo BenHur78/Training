@@ -2,7 +2,8 @@
 Learnings related to JRuby and Ruby.
 
 # Requirements
-We use *jruby-9.1.17.0* installed in *C:\Ptin\JRubyBinaries\jruby-9.1.17.0* directory
+- We use *jruby-9.1.17.0* installed in *C:\Ptin\JRubyBinaries\jruby-9.1.17.0* directory
+- Using VS Code editor, install *Ruby Peng Lv* ruby extension, *https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby*
 
 # Commands
 
@@ -18,3 +19,5 @@ or
 ```
 ruby HelloWorld.rb
 ```
+
+2. You can use an online editor like repl *https://replit.com/* to run ruby code.
