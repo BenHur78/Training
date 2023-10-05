@@ -4,10 +4,12 @@ Following Pro Angular 5th book to learn angular.
 The github repository location of the book: 
 https://github.com/Apress/pro-angular-5ed
 
+## Links
+
+- Google icons https://fonts.google.com/icons
 
 ## Node commands
 
-### Running NPM
 - npm version
 ```
 npm -v
@@ -30,3 +32,8 @@ ng new todo --routing false --style css --skip-git --skip-tests
 ng serve
 ```
 
+- Adding the Angular Material Package
+
+```
+ng add @angular/material@13.0.2 --defaults
+```
