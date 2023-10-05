@@ -32,8 +32,28 @@ ng new todo --routing false --style css --skip-git --skip-tests
 ng serve
 ```
 
+Another option
+```
+ng serve --open
+```
+
+
 - Adding the Angular Material Package
 
 ```
 ng add @angular/material@13.0.2 --defaults
 ```
+
+- Installing the Bootstrap CSS Package (run the command inside the folder project)
+
+```
+npm install bootstrap@5.1.3
+```
+
+-  Changing the Application Configuration Using PowerShell
+
+```
+Set-ExecutionPolicy Bypass -Scope Process -Force;
+ng config projects.Primer.architect.build.options.styles '[""src/styles.css"", ""node_modules/bootstrap/dist/css/bootstrap.min.css""]'
+```
+
