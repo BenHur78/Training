@@ -41,3 +41,11 @@
     <tr mat-row *matRowDef="let row; columns: ['id', 'task', 'done'];"></tr>
   </table>
 </div>
+
+<div class="toggleContainer">
+  <span class="spacer"></span>
+  <mat-slide-toggle [(ngModel)] = "showComplete">
+    Show Completed Items
+  </mat-slide-toggle>
+  <span class="spacer"></span>
+</div>
