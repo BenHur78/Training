@@ -12,6 +12,6 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
   */
 
-  let condition = true;
-  let person = "Bob";
-  const age = 40;
+  let condition: boolean = true;
+  let person: string = "Bob";
+  const age: number = 40;
