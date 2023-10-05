@@ -501,4 +501,88 @@ class AppTest {
         assertEquals(true, exception == null);
     }
 
+    @Test
+    void ForEventCondition_WhenBalance_IsInRange_ResultCondition_ShouldBeTrue() {
+
+        // Arrange
+        HashMap<String, Object> tokens = new HashMap<>();
+        tokens.put("balance_before_topup", new Double(-1.15));
+
+        // Act
+        boolean result = App.eventBuilderEventConditionBalance(tokens);
+
+        // Assert
+        assertEquals(true, result);
+    }
+
+    @Test
+    void ForEventCondition_WhenBalance_IsNotInRange_ResultCondition_ShouldBeFalse_1() {
+
+        // Arrange
+        HashMap<String, Object> tokens = new HashMap<>();
+        tokens.put("balance_before_topup", new Double(-1000.01));
+
+        // Act
+        boolean result = App.eventBuilderEventConditionBalance(tokens);
+
+        // Assert
+        assertEquals(false, result);
+    }
+
+    @Test
+    void ForEventCondition_WhenBalance_IsNotInRange_ResultCondition_ShouldBeFalse_2() {
+
+        // Arrange
+        HashMap<String, Object> tokens = new HashMap<>();
+        tokens.put("balance_before_topup", new Double(1000.01));
+
+        // Act
+        boolean result = App.eventBuilderEventConditionBalance(tokens);
+
+        // Assert
+        assertEquals(false, result);
+    }
+
+    @Test
+    void ForEventCondition_WhenPropensity2_IsInRange_ResultCondition_ShouldBeTrue() {
+
+        // Arrange
+        HashMap<String, Object> tokens = new HashMap<>();
+        tokens.put("topup_propensity_2", new Long(20));
+
+        // Act
+        boolean result = App.eventBuilderEventConditionPropensity2(tokens);
+
+        // Assert
+        assertEquals(true, result);
+    }
+
+    @Test
+    void ForEventCondition_WhenPropensity2_IsNotInRange_ResultCondition_ShouldBeFalse_1() {
+
+        // Arrange
+        HashMap<String, Object> tokens = new HashMap<>();
+        tokens.put("topup_propensity_2", new Long(-1));
+
+        // Act
+        boolean result = App.eventBuilderEventConditionPropensity2(tokens);
+
+        // Assert
+        assertEquals(false, result);
+    }
+
+    @Test
+    void ForEventCondition_WhenPropensity2_IsNotInRange_ResultCondition_ShouldBeFalse_2() {
+
+        // Arrange
+        HashMap<String, Object> tokens = new HashMap<>();
+        tokens.put("topup_propensity_2", new Long(101));
+
+        // Act
+        boolean result = App.eventBuilderEventConditionPropensity2(tokens);
+
+        // Assert
+        assertEquals(false, result);
+    }
+
 }

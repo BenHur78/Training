@@ -18,6 +18,44 @@ public final class App {
         System.out.println("Hello World!");
     }
 
+    public static boolean eventBuilderEventConditionBalance(HashMap<String, Object> tokens) {
+        boolean result = false;
+
+        if (tokens.containsKey("balance_before_topup")
+                && tokens.get("balance_before_topup") != null
+                && Double.parseDouble(tokens.get("balance_before_topup").toString()) >= -1000
+                && Double.parseDouble(tokens.get("balance_before_topup").toString()) <= 1000) {
+
+            result = true;
+        }
+
+        return result;
+    }
+
+    public static boolean eventBuilderEventConditionPropensity2(HashMap<String, Object> tokens) {
+        boolean result = false;
+
+        /*
+         * if (tokens.containsKey("topup_propensity_2")
+         * && tokens.get("topup_propensity_2") != null
+         * && Integer.parseInt(tokens.get("topup_propensity_2").toString()) >= 0
+         * && Integer.parseInt(tokens.get("topup_propensity_2").toString()) <= 100) {
+         * 
+         * result = true;
+         * }
+         */
+
+        if (tokens.containsKey("topup_propensity_2")
+                && tokens.get("topup_propensity_2") != null
+                && Long.parseLong(tokens.get("topup_propensity_2").toString()) >= 0
+                && Long.parseLong(tokens.get("topup_propensity_2").toString()) <= 100) {
+
+            result = true;
+        }
+
+        return result;
+    }
+
     public static HashMap<String, Object> validateFocusEvent(
             HashMap<String, Object> tokens,
             HashMap<String, HashMap<String, HashMap<String, String>>> refdata) throws IllegalArgumentException {
