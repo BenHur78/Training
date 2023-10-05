@@ -12,11 +12,10 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
   */
 
-  let firstBool = true;
-let secondBool = false;
-
-let firstString = "This is a string";
-let secondString = 'And so is this';
-
-let place: string | undefined | null;
-console.log(`Place value: ${place} Type: ${typeof(place)}`);
+  let firstVal: any = 5;
+  let secondVal: any = "5";
+  if (firstVal == secondVal) {
+   console.log("They are the same");
+  } else {
+   console.log("They are NOT the same");
+  }
