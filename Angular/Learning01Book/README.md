@@ -1,15 +1,14 @@
 # Introduction 
 Following Pro Angular 5th book to learn angular.
 
-The github repository location of the book: 
-https://github.com/Apress/pro-angular-5ed
+The github repository location of the book: `https://github.com/Apress/pro-angular-5ed`
 
 ## Links
 
-- Bootstrap framework https://getbootstrap.com/
-- Google icons https://fonts.google.com/icons
+- Bootstrap framework `https://getbootstrap.com/`
+- Google icons `https://fonts.google.com/icons`
 
-## Node commands
+## Commands (chapters 1, 2)
 
 - npm version
 ```
@@ -58,3 +57,27 @@ Set-ExecutionPolicy Bypass -Scope Process -Force;
 ng config projects.Primer.architect.build.options.styles '[""src/styles.css"", ""node_modules/bootstrap/dist/css/bootstrap.min.css""]'
 ```
 
+## Commands (chapters 4)
+- Installing the Additional NPM Packages
+
+```
+cd SportsStore
+npm install bootstrap@5.1.3
+npm install @fortawesome/fontawesome-free@6.0.0
+npm install --save-dev json-server@0.17.0
+npm install --save-dev jsonwebtoken@8.5.1
+```
+
+-  Adding the CSS Style Sheets to the Application
+
+```
+cd SportsStore
+Set-ExecutionPolicy Bypass -Scope Process -Force;
+ng config projects.SportsStore.architect.build.options.styles '[""src/styles.css"", ""node_modules/@fortawesome/fontawesome-free/css/all.min.css"", ""node_modules/bootstrap/dist/css/bootstrap.min.css""]'
+```
+
+- Checking the Configuration Changes
+
+```
+ng config projects.SportsStore.architect.build.options.styles
+```
