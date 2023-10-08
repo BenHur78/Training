@@ -151,3 +151,7 @@ ng add @angular/material@13.0.2
 1. Administration login
 
 ![Administration login image](./chp05-chp06-chp07-chp08/images/chp07-administration%20login.png)
+
+2. Administration layout structure
+
+![Administration login image](./chp05-chp06-chp07-chp08/images/chp07-administration%20layout%20structure.png)
