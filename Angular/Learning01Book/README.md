@@ -117,3 +117,7 @@ npm run json
 2. Shopping cart
 
 ![Shopping cart image](./chp05-chp06-chp07-chp08/images/chp05-shopping%20cart.png)
+
+3. Checkout form
+
+![Checkout form image](./chp05-chp06-chp07-chp08/images/chp05-checkout%20form.png)
