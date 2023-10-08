@@ -155,3 +155,7 @@ ng add @angular/material@13.0.2
 2. Administration layout structure
 
 ![Administration login image](./chp05-chp06-chp07-chp08/images/chp07-administration%20layout%20structure.png)
+
+3. Displaying the product table
+
+![Administration login image](./chp05-chp06-chp07-chp08/images/chp07-displaying%20the%20product%20table.png)

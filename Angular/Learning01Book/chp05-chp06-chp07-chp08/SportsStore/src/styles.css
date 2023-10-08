@@ -19,3 +19,10 @@ mat-sidenav .mat-button-wrapper {
 }
 mat-sidenav .mat-button-wrapper  mat-icon { margin-top: 5px; }
 mat-sidenav .mat-button-wrapper span { text-align: start; }
+
+table[mat-table] { width: 100%; table-layout: auto; }
+table[mat-table] button { margin-left: 5px;}
+table[mat-table] th.mat-header-cell { font-size: large; font-weight: bold;}
+table[mat-table] .mat-column-name { width: 25%; }
+table[mat-table] .mat-column-buttons { width: 30%; }
+table[mat-table] + button[mat-flat-button] { margin-top: 10px;}
