@@ -88,3 +88,13 @@ ng config projects.SportsStore.architect.build.options.styles
 cd SportsStore
 npm run json
 ```
+
+## Chapter 04 - some images of the application
+
+1. Basic features in the SportsStore application
+
+![Basic features image](./chp05/images/chp04-basic%20features.png)
+
+2. Displaying product information
+
+![Displaying product information image](./chp05/images/chp04-displaying%20product%20information.png)
