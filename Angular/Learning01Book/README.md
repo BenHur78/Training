@@ -129,3 +129,9 @@ npm run json
 3. Checkout form
 
 ![Checkout form image](./chp05-chp06-chp07-chp08/images/chp05-checkout%20form.png)
+
+## Chapter 07 - some images of the application
+
+1. Administration login
+
+![Administration login image](./chp05-chp06-chp07-chp08/images/chp07-administration%20login.png)
