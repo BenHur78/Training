@@ -6,6 +6,7 @@ The github repository location of the book: `https://github.com/Apress/pro-angul
 ## Links
 
 - Bootstrap framework `https://getbootstrap.com/`
+- Font Awesome `https://fontawesome.com/`
 - Google icons `https://fonts.google.com/icons`
 
 ## Commands (chapters 1, 2)
@@ -93,18 +94,24 @@ npm run json
 
 1. Basic features in the SportsStore application
 
-![Basic features image](./chp05/images/chp04-basic%20features.png)
+![Basic features image](./chp05-chp06-chp07-chp08/images/chp04-basic%20features.png)
 
 2. Displaying product information
 
-![Displaying product information image](./chp05/images/chp04-displaying%20product%20information.png)
+![Displaying product information image](./chp05-chp06-chp07-chp08/images/chp04-displaying%20product%20information.png)
 
 3. Selecting product categories
 
-![Selecting product categories image](./chp05/images/chp04-selecting%20product%20categories.png)
+![Selecting product categories image](./chp05-chp06-chp07-chp08/images/chp04-selecting%20product%20categories.png)
 
 4. Adding pagination
 
-![Pagination image](./chp05/images/chp04-pagination.png)
+![Pagination image](./chp05-chp06-chp07-chp08/images/chp04-pagination.png)
 
 ## Chapter 06 - some images of the application
+
+1. Adding cart
+
+![Cart image](./chp05-chp06-chp07-chp08/images/chp05-adding%20cart.png)
+
+
