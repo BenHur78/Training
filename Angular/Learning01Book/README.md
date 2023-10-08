@@ -9,6 +9,14 @@ The github repository location of the book: `https://github.com/Apress/pro-angul
 - Font Awesome `https://fontawesome.com/`
 - Google icons `https://fonts.google.com/icons`
 
+## Application Urls
+
+- SportsStore url `http://localhost:4200/`
+
+- Json server url, listing products `http://localhost:3500/products`
+
+- Json server url, listing orders `http://localhost:3500/db`
+
 ## Commands (chapters 1, 2)
 
 - npm version
@@ -58,7 +66,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force;
 ng config projects.Primer.architect.build.options.styles '[""src/styles.css"", ""node_modules/bootstrap/dist/css/bootstrap.min.css""]'
 ```
 
-## Commands (chapters 4)
+## Commands (chapters 5, 6, 7)
 - Installing the Additional NPM Packages
 
 ```
