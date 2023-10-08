@@ -98,3 +98,7 @@ npm run json
 2. Displaying product information
 
 ![Displaying product information image](./chp05/images/chp04-displaying%20product%20information.png)
+
+3. Selecting product categories
+
+![Displaying product information image](./chp05/images/chp04-selecting%20product%20categories.png)
