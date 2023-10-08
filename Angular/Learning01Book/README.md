@@ -106,6 +106,14 @@ cd SportsStore
 npm run json
 ```
 
+- Installing the Component Library Package (you need to stop ng serve)
+
+```
+cd SportsStore
+ng add @angular/material@13.0.2
+```
+
+
 ## Chapter 05 - some images of the application
 
 1. Basic features in the SportsStore application
