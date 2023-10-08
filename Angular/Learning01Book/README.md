@@ -163,3 +163,7 @@ ng add @angular/material@13.0.2
 4. Creating a product
 
 ![Creating a product image](./chp05-chp06-chp07-chp08/images/chp07-creating%20a%20product.png)
+
+5. Managing orders
+
+![Managing orders image](./chp05-chp06-chp07-chp08/images/chp07-managing%20orders.png)
