@@ -114,4 +114,6 @@ npm run json
 
 ![Cart image](./chp05-chp06-chp07-chp08/images/chp05-adding%20cart.png)
 
+2. Shopping cart
 
+![Shopping cart image](./chp05-chp06-chp07-chp08/images/chp05-shopping%20cart.png)
