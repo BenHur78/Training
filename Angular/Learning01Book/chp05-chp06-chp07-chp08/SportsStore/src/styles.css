@@ -25,4 +25,8 @@ table[mat-table] button { margin-left: 5px;}
 table[mat-table] th.mat-header-cell { font-size: large; font-weight: bold;}
 table[mat-table] .mat-column-name { width: 25%; }
 table[mat-table] .mat-column-buttons { width: 30%; }
-table[mat-table] + button[mat-flat-button] { margin-top: 10px;}
+/*table[mat-table] + button[mat-flat-button] { margin-top: 10px;}*/
+
+.bottom-box { background-color: white; padding-bottom: 20px;}
+.bottom-box > button[mat-flat-button] { margin-top: 10px;}
+.bottom-box mat-paginator { float: right; font-size: 14px; }

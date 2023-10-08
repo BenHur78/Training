@@ -1,8 +1,8 @@
 import { Component, IterableDiffer, IterableDiffers, ViewChild } from "@angular/core";
-import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 import { Product } from "../model/product.model";
 import { ProductRepository } from "../model/product.repository";
+import { MatPaginator } from "@angular/material/paginator";
 
 @Component({
     templateUrl: "productTable.component.html"
