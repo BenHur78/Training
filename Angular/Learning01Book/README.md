@@ -14,9 +14,16 @@ The github repository location of the book: `https://github.com/Apress/pro-angul
 
 - SportsStore url `http://localhost:4200/`
 
+- SportsStore administration url `http://localhost:4200/admin/auth`
+
 - Json server url, listing products `http://localhost:3500/products`
 
 - Json server url, listing orders `http://localhost:3500/db`
+
+## Administration Credentials
+The name is `admin` and password is `secret`.
+
+![Administration login image](./chp05-chp06-chp07-chp08/images/chp07-administration%20login.png)
 
 ## Commands (chapters 1, 2)
 
