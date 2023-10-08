@@ -101,4 +101,8 @@ npm run json
 
 3. Selecting product categories
 
-![Displaying product information image](./chp05/images/chp04-selecting%20product%20categories.png)
+![Selecting product categories image](./chp05/images/chp04-selecting%20product%20categories.png)
+
+4. Adding pagination
+
+![Pagination image](./chp05/images/chp04-pagination.png)
