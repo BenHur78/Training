@@ -7,6 +7,7 @@ The github repository location of the book: `https://github.com/Apress/pro-angul
 
 - Bootstrap framework `https://getbootstrap.com/`
 - Font Awesome `https://fontawesome.com/`
+- JSON Web Token (JWT) specification `https://datatracker.ietf.org/doc/html/rfc7519`
 - Google icons `https://fonts.google.com/icons`
 
 ## Application Urls
