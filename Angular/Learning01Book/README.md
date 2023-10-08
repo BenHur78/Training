@@ -81,3 +81,10 @@ ng config projects.SportsStore.architect.build.options.styles '[""src/styles.css
 ```
 ng config projects.SportsStore.architect.build.options.styles
 ```
+
+- Starting the RESTful Web Service
+
+```
+cd SportsStore
+npm run json
+```
