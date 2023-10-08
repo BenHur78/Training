@@ -30,3 +30,8 @@ table[mat-table] .mat-column-buttons { width: 30%; }
 .bottom-box { background-color: white; padding-bottom: 20px;}
 .bottom-box > button[mat-flat-button] { margin-top: 10px;}
 .bottom-box mat-paginator { float: right; font-size: 14px; }
+
+mat-form-field { width: 100%;}
+mat-form-field:first-child { margin-top: 20px;}
+form button[mat-flat-button] { margin-top: 10px; margin-right: 10px;}
+h3.heading { margin-top: 20px; }

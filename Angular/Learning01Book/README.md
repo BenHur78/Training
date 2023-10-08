@@ -154,8 +154,12 @@ ng add @angular/material@13.0.2
 
 2. Administration layout structure
 
-![Administration login image](./chp05-chp06-chp07-chp08/images/chp07-administration%20layout%20structure.png)
+![Administration layout structure image](./chp05-chp06-chp07-chp08/images/chp07-administration%20layout%20structure.png)
 
 3. Displaying the product table
 
-![Administration login image](./chp05-chp06-chp07-chp08/images/chp07-displaying%20the%20product%20table.png)
+![Displaying the product table image](./chp05-chp06-chp07-chp08/images/chp07-displaying%20the%20product%20table.png)
+
+4. Creating a product
+
+![Creating a product image](./chp05-chp06-chp07-chp08/images/chp07-creating%20a%20product.png)
