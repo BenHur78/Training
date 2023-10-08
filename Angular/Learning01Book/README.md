@@ -89,7 +89,7 @@ cd SportsStore
 npm run json
 ```
 
-## Chapter 04 - some images of the application
+## Chapter 05 - some images of the application
 
 1. Basic features in the SportsStore application
 
@@ -106,3 +106,5 @@ npm run json
 4. Adding pagination
 
 ![Pagination image](./chp05/images/chp04-pagination.png)
+
+## Chapter 06 - some images of the application
