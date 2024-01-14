@@ -2,19 +2,26 @@ var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 app.Use(async (context, next) => { 
-    if(context.Request.Method == HttpMethods.Get && context.Request.Query["custom"] == "true")
+    
+    await next();
+
+    await context.Response.WriteAsync($"\n Status Code: { context.Response.StatusCode }");
+
+});
+
+app.Use(async (context, next) => {
+
+    if (context.Request.Method == HttpMethods.Get && context.Request.Query["custom"] == "true")
     {
-        if (!context.Response.HasStarted)
-        {
-            context.Response.ContentType = "text/plain";
-        }
+        context.Response.ContentType = "text/plain";
 
         await context.Response.WriteAsync("Custom Middleware \n");
     }
-    await next();
-});
 
-app.UseMiddleware<Platform.QueryStringMiddleware>();
+    await next();
+
+
+});
 
 app.MapGet("/", () => "Hello World!");
 
