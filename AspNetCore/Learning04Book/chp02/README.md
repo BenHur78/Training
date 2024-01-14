@@ -18,6 +18,13 @@ dotnet new sln -o FirstProject
 dotnet sln FirstProject add FirstProject
 ```
 
+- **How to install .NET 6.0 release?*
+We installed .NET 6.0.11 with contain SDK 6.0.403 version.
+```
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.403-windows-x64-installer
+```
+
+
 - **dotnet new globaljson** this command creates a folder named FirstProject and adds to it a file named global.json, which specifies the version of .NET that the project will use; this ensures you get the expected results when following the examples.
 
 

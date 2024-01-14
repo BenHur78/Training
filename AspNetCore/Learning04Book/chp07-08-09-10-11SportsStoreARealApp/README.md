@@ -7,6 +7,21 @@ We will learn how to create a real application, following chapter's from 07 to 1
 * Chapter 10 - SportsStore: Administration
 * Chapter 11 - SportsStore: Security and Deployment
 
+## Credentials
+
+1. Credentials to access Microsoft SQL Server
+```
+Login is SA
+Port is 1433
+Password is MyPass@word
+```
+
+2. Credentials to access http://localhost:5000/admin
+```
+Username is admin
+Password is Secret123$
+```
+
 ## dotnet commands
 
 1. To create the web project
@@ -142,7 +157,7 @@ dotnet ef database update --context AppIdentityDbContext
 1. We will have a docker container for the web application and a docker container for the database
 2. To create the web application binaries run the following command in _SportsStore_ directory:
 ```
-dotnet publish -C Release
+dotnet publish -c Release
 ```
 
 3. Now in VSC open 2 powershell terminal windows. We will do a docker-compose build to create the 2 images, one for the web application and another one for the database
