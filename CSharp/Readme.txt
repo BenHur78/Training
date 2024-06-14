@@ -1,5 +1,5 @@
 ****************************************
-Pro C# with .NET and .NET Core
+Pro C# 7 with .NET and .NET Core, 8th edition
 ****************************************
 
 1. Where I am? Page 88.
