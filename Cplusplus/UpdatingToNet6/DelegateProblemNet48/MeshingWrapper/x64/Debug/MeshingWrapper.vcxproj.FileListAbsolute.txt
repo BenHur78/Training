@@ -1,0 +1,1 @@
+C:\Dev\Azure\FaroItaly\DelegateProblemNet48\MeshingWrapper\x64\Debug\MeshingWrapper.vcxproj.AssemblyReference.cache

@@ -1,0 +1,22 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly MeshingWrapper, Version=1.7.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Interface MeshingWrapper.IProgressObserver: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
+  Methods:
+    Notify(Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Canceled(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class MeshingWrapper.ProgressObserverWrapper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(MeshingWrapper.IProgressObserver): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class MeshingWrapper.PcIOOptions: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class MeshingWrapper.PcIOManager: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Load(String, IProgressObserver): PrivateScope, Public, Static, HideBySig
