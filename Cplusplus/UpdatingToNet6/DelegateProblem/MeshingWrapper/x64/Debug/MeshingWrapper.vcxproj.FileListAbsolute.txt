@@ -1,0 +1,4 @@
+C:\Dev\Azure\FaroItaly\DelegateProblem\MeshingWrapper\out\Debug\Ijwhost.dll
+C:\Dev\Azure\FaroItaly\DelegateProblem\MeshingWrapper\out\Debug\MeshingWrapper.deps.json
+C:\Dev\Azure\FaroItaly\DelegateProblem\MeshingWrapper\out\Debug\MeshingWrapper.runtimeconfig.json
+C:\Dev\Azure\FaroItaly\DelegateProblem\MeshingWrapper\x64\Debug\MeshingWrapper.genruntimeconfig.cache
