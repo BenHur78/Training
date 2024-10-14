@@ -18,6 +18,7 @@ using System.Globalization;
 using System.Windows.Threading;
 using DevExpress.Xpf.Ribbon;
 using DevExpress.Xpf.Core;
+using WebApi;
 
 namespace RibbonControl_Ex {
     /// <summary>
@@ -26,7 +27,7 @@ namespace RibbonControl_Ex {
     public partial class MainWindow : ThemedWindow
     {
 
-        private WebApiInitializer _webApi;
+        private WebApi.WebApiInitializer _webApi;
 
         public MainWindow() {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace RibbonControl_Ex {
 
             //Page3Initialization();
 
-            _webApi = new WebApiInitializer();
+            _webApi = new WebApi.WebApiInitializer();
             _webApi.InitWebApi();
         }
 

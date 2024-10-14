@@ -4,7 +4,9 @@ VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RibbonControl_Ex", "RibbonControl_Ex\RibbonControl_Ex.csproj", "{8E5B3F58-5D36-4208-B41C-9ACE40EF1838}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{9EB0B7B6-486E-4B35-977B-8B47AFA0F799}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{9EB0B7B6-486E-4B35-977B-8B47AFA0F799}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{598DE3A2-DED7-4E18-8DDD-98D599810FD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,14 @@ Global
 		{9EB0B7B6-486E-4B35-977B-8B47AFA0F799}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9EB0B7B6-486E-4B35-977B-8B47AFA0F799}.Release|x64.ActiveCfg = Release|Any CPU
 		{9EB0B7B6-486E-4B35-977B-8B47AFA0F799}.Release|x64.Build.0 = Release|Any CPU
+		{598DE3A2-DED7-4E18-8DDD-98D599810FD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{598DE3A2-DED7-4E18-8DDD-98D599810FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{598DE3A2-DED7-4E18-8DDD-98D599810FD3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{598DE3A2-DED7-4E18-8DDD-98D599810FD3}.Debug|x64.Build.0 = Debug|Any CPU
+		{598DE3A2-DED7-4E18-8DDD-98D599810FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{598DE3A2-DED7-4E18-8DDD-98D599810FD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{598DE3A2-DED7-4E18-8DDD-98D599810FD3}.Release|x64.ActiveCfg = Release|Any CPU
+		{598DE3A2-DED7-4E18-8DDD-98D599810FD3}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
