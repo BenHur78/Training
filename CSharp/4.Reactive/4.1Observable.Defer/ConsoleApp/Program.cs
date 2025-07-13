@@ -1,4 +1,5 @@
 ﻿// See https://learn.microsoft.com/en-us/previous-versions/dotnet/reactive-extensions/hh229160(v=vs.103) for more information
+using System.Reactive.Concurrency;
 using System.Reactive.Linq; // Required for Observable methods
 
 //*****************************************************************************************************//
@@ -8,7 +9,14 @@ using System.Reactive.Linq; // Required for Observable methods
 //*** at that time with the latest inventory levels to be sent to the observer.                     ***//
 //*****************************************************************************************************//
 ProductInventory myInventory = new ProductInventory();
-IObservable<Product> productObservable = Observable.Defer(myInventory.GetUpdatedInventory);
+//IObservable<Product> productObservable = Observable.Defer(myInventory.GetUpdatedInventory);
+var productObservable = Observable.DeferAsync(myInventory.GetUpdatedInventoryAsync);
+
+//IObservable<Product> productObservable = Observable.Defer(myInventory.GetUpdatedInventory)
+//    .SubscribeOn(TaskPoolScheduler.Default);
+
+
+//productObservable = productObservable.ObserveOn(TaskPoolScheduler.Default);
 
 //******************************************************//
 //*** Generate a simple table in the console window. ***//
@@ -22,7 +30,10 @@ Console.WriteLine("{0,-13} {1,-37} {2,-18}", "============", "==================
 //*** Each product in the sequence will be reported in the table using the       ***//
 //*** Observer's OnNext handler provided with the Subscribe method.              ***//
 //**********************************************************************************//
+//productObservable.Subscribe(prod => Console.WriteLine(prod.ToString()));
+
 productObservable.Subscribe(prod => Console.WriteLine(prod.ToString()));
+
 
 //******************************************************************************************************//
 //*** To get the updated sequence from the deferred observable all we have to do is subscribe again. ***//
@@ -109,4 +120,24 @@ class ProductInventory
         IObservable<Product> updatedProductSequence = products.ToAsyncEnumerable().ToObservable();
         return updatedProductSequence;
     }
+
+    public async Task<IObservable<Product>> GetUpdatedInventoryAsync(CancellationToken cancellationToken)
+    {
+        //***************************************************************************************************//
+        //*** When inventory for each product is updated up to 50 of each product is consumed or shipped. ***//
+        //***************************************************************************************************//
+        for (int i = 0; i < 5; i++)
+        {
+            await Task.Delay(10); // Simulate async operation
+            products[i].RemoveInventory(random.Next(51));
+        }
+
+        //****************************************************************************************************//
+        //*** This updated observable sequence is always provided by this method when Subscribe is called. ***//
+        //****************************************************************************************************//
+        IObservable<Product> updatedProductSequence = products.ToAsyncEnumerable().ToObservable();
+        return updatedProductSequence;
+    }
+
+
 }
