@@ -57,6 +57,18 @@
                     }
                 }
             }
+
+            //Here we had to reopen ProductFilter
+            public IEnumerable<Product> FilterByColorAndSize(IEnumerable<Product> products, Color color, Size size)
+            {
+                foreach (var p in products)
+                {
+                    if (p.Color == color && p.Size == size)
+                    {
+                        yield return p;
+                    }
+                }
+            }
         }
 
     }
