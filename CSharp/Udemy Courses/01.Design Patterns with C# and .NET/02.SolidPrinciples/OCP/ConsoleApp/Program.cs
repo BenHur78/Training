@@ -1,4 +1,7 @@
-﻿namespace DesignPatterns
+﻿using System.Drawing;
+using System.Runtime.CompilerServices;
+
+namespace DesignPatterns
 {
     public enum Color
     {
@@ -101,6 +104,56 @@
         }
     }
 
+    public class SizeSpecification: ISpecification<Product>
+    {
+        private Size _size;
+
+        public SizeSpecification(Size size)
+        {
+            _size=size;
+        }
+
+        public bool IsStatisfied(Product t)
+        {
+            return t.Size == _size;
+        }
+    }
+
+    // first approach
+    public class AndSpecification1 : ISpecification<Product>
+    {
+        private Color _color;
+        private Size _size;
+
+        public AndSpecification1(Color color, Size size)
+        {
+            _color=color;
+            _size=size;
+        }
+
+        public bool IsStatisfied(Product t)
+        {
+            return t.Color == _color && t.Size == _size;
+        }
+    }
+
+    // second approach
+    public class AndSpecification2<T> : ISpecification<T>
+    {
+        private ISpecification<T> _first, _second;
+
+        public AndSpecification2(ISpecification<T> first, ISpecification<T> second)
+        {
+            _first = first ?? throw new ArgumentNullException(paramName: nameof(first)); ;
+            _second = second ?? throw new ArgumentNullException(paramName: nameof(second));
+        }
+
+        public bool IsStatisfied(T t)
+        {
+            return _first.IsStatisfied(t) && _second.IsStatisfied(t);
+        }
+    }
+
     public class BetterFilter : IFilter<Product>
     {
         public IEnumerable<Product> Filter(IEnumerable<Product> items, ISpecification<Product> spec)
@@ -139,6 +192,13 @@
             foreach(var p in betterFilter.Filter(products, new ColorSpecification(Color.Green)))
             {
                 Console.WriteLine($" - {p.Name} is green");
+            }
+
+            // how to find large blue items
+            Console.WriteLine("Large blue items:");
+            foreach (var p in betterFilter.Filter(products, new AndSpecification2<Product>(new ColorSpecification(Color.Blue), new SizeSpecification(Size.Large))))
+            {
+                Console.WriteLine($" - {p.Name} is blue and large");
             }
         }
     }

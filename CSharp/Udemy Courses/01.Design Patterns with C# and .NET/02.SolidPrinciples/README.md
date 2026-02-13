@@ -8,3 +8,5 @@ The purpose of this section is to study SOLID principles.
 - If we modify ProductFilter, we violate the principle because the principle says that the class should only be opened for extensions but closed for modifications.
 - How we can not violate the OCP principle?
 - We created interfaces ISpecification and IFilter. A color or a Size will be an implementation of a specification. A filter receives a specification and filter the products based on the spec.
+- How we can filter by both color and size?
+- The BetterFilter class is open for extension but closed for modification.
