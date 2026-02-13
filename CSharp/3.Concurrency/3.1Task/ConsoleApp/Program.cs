@@ -336,7 +336,12 @@ Console.WriteLine("Hello, Scott!");
 //}
 
 //#7 - implementing await keyword by implementing an awaiter
-PrintAsync().Wait();
+//PrintAsync().Wait();
+
+//#8 - An exception happen inside a Task that was not observed
+//UnobservedTaskDemo();
+ObservedTaskDemo();
+
 static async System.Threading.Tasks.Task PrintAsync()
 {
     for (int i = 0; ; i++)
@@ -344,4 +349,53 @@ static async System.Threading.Tasks.Task PrintAsync()
         await MyTask1.Delay(1000);
         Console.WriteLine(i);
     }
+}
+
+
+static void UnobservedTaskDemo()
+{
+    //Without attaching to the global event handler, the exception will be silently ignored
+    TaskScheduler.UnobservedTaskException += (_, e) =>
+    {
+        if (e.Exception is AggregateException agg)
+        {
+            foreach (var inner in agg.InnerExceptions)
+                Console.WriteLine($"UnobservedTaskException: {inner}\nStackTrace: {inner.StackTrace}");
+        }
+        else if (e.Exception.InnerException != null)
+        {
+            var inner = e.Exception.InnerException;
+            Console.WriteLine($"UnobservedTaskException: {inner}\nStackTrace: {inner.StackTrace}");
+        }
+        else
+        {
+            Console.WriteLine($"UnobservedTaskException: {e.Exception}\nStackTrace: {e.Exception.StackTrace}");
+        }
+    };
+
+    var task = new TaskDemo.UnobservedTask();
+}
+
+static void ObservedTaskDemo()
+{
+    //Without attaching to the global event handler, the exception will be silently ignored
+    TaskScheduler.UnobservedTaskException += (_, e) =>
+    {
+        if (e.Exception is AggregateException agg)
+        {
+            foreach (var inner in agg.InnerExceptions)
+                Console.WriteLine($"UnobservedTaskException: {inner}\nStackTrace: {inner.StackTrace}");
+        }
+        else if (e.Exception.InnerException != null)
+        {
+            var inner = e.Exception.InnerException;
+            Console.WriteLine($"UnobservedTaskException: {inner}\nStackTrace: {inner.StackTrace}");
+        }
+        else
+        {
+            Console.WriteLine($"UnobservedTaskException: {e.Exception}\nStackTrace: {e.Exception.StackTrace}");
+        }
+    };
+
+    var task = new TaskDemo.ObservedTask();
 }
