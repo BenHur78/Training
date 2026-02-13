@@ -73,6 +73,48 @@
 
     }
 
+    // A specification of T
+    public interface ISpecification<T>
+    {
+        bool IsStatisfied(T t);
+    }
+
+    // We take a bunch of items of type T and we will filter them according to a specification
+    interface IFilter<T>
+    {
+        IEnumerable<T> Filter(IEnumerable<T> items, ISpecification<T> spec);
+    }
+
+    // Let assume we want to filter items by Color
+    public class ColorSpecification : ISpecification<Product>
+    {
+        private Color _color;
+
+        public ColorSpecification(Color color)
+        {
+            _color = color;
+        }
+
+        public bool IsStatisfied(Product t)
+        {
+            return t.Color == _color;
+        }
+    }
+
+    public class BetterFilter : IFilter<Product>
+    {
+        public IEnumerable<Product> Filter(IEnumerable<Product> items, ISpecification<Product> spec)
+        {
+            foreach(var item in items)
+            {
+                if(spec.IsStatisfied(item))
+                {
+                    yield return item;
+                }
+            }
+        }
+    }
+
     public class Demo
     {
         static void Main(string[] args)
@@ -87,6 +129,14 @@
             Console.WriteLine("Green products (old):");
 
             foreach(var p in pf.FilterByColor(products, Color.Green))
+            {
+                Console.WriteLine($" - {p.Name} is green");
+            }
+
+            var betterFilter = new BetterFilter();
+            Console.WriteLine("Green products (new):");
+
+            foreach(var p in betterFilter.Filter(products, new ColorSpecification(Color.Green)))
             {
                 Console.WriteLine($" - {p.Name} is green");
             }
