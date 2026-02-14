@@ -22,10 +22,16 @@
             relations.Add((parent, Relationship.Parent, child));
             relations.Add((child, Relationship.Child, parent));
         }
+
+        public List<(Person, Relationship, Person)> Relations => relations;
     }
 
-    public class Research //the high module
+    class Research //the high module
     {
+        public Research(Relationshipts relationshipts)
+        {            
+        }
+
         static void Main(string[] args)
         {
             var parent = new Person { Name = "John" };
@@ -36,6 +42,8 @@
             var relationships = new Relationshipts();
             relationships.AddParentAndChild(parent, child1);
             relationships.AddParentAndChild(parent, child2);
+
+            new Research(relationships);
 
             Console.WriteLine($"");
         }
