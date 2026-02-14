@@ -3,9 +3,9 @@
     public class Rectangle
     {
 
-        public int Width { get; set; }
+        public virtual int Width { get; set; }
 
-        public int Height { get; set; }
+        public virtual int Height { get; set; }
 
         public Rectangle(int width = 0, int height = 0)
         {
@@ -21,7 +21,7 @@
 
     public class Square : Rectangle
     {
-        public new int Width 
+        public override int Width 
         { 
             set
             {
@@ -29,7 +29,7 @@
             } 
         }
 
-        public new int Height 
+        public override int Height 
         {
             set
             {

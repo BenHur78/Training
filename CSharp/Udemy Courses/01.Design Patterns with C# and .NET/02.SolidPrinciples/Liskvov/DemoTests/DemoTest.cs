@@ -46,7 +46,7 @@ namespace DemoTests
             squareArea.Should().Be(16); 
 
             // Act
-            Rectangle rectangle2 = new Square(); // Liskov Substitution Principle violation
+            Rectangle rectangle2 = new Square(); // Liskov Substitution Principle fixed
             rectangle2.Width = 4;
             recArea = Functions.Area(rectangle2);
 
