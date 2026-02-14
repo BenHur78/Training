@@ -38,7 +38,24 @@
         void Scan(Document d);
     }
 
+    public interface IMultiFunctionsDevice : IPrinter, IScanner
+    {
+    }
+
     public class Photocopier : IPrinter, IScanner
+    {
+        public void Print(Document d)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Scan(Document d)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class MultiFunctionMachine2 : IMultiFunctionsDevice
     {
         public void Print(Document d)
         {
