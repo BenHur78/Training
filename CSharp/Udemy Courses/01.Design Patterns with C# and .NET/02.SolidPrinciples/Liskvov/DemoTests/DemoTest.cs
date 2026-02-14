@@ -43,7 +43,7 @@ namespace DemoTests
             var square = new Square(); //we should be able to cast Square to Rectangle without any issues.
             square.Width = 4;
             var squareArea = Functions.Area(square);
-            squareArea.Should().Be(16); 
+            squareArea.Should().Be(16);
 
             // Act
             Rectangle rectangle2 = new Square(); // Liskov Substitution Principle fixed

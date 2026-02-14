@@ -1,4 +1,5 @@
 # Introduction 
 The purpose of this section is to study SOLID principles:
-- Open/Closed Principle.
+- Open/Closed Principle (OCP).
 - Liskov Substitution Principle.
+- Interface Segregation Principle (ISP).
