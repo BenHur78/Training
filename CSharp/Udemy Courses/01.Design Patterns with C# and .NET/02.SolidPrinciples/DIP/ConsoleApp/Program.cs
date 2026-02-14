@@ -23,13 +23,18 @@
             relations.Add((child, Relationship.Child, parent));
         }
 
-        public List<(Person, Relationship, Person)> Relations => relations;
+        public List<(Person, Relationship, Person)> Relations => relations; //bad, this is a private thing being exposed.
     }
 
     class Research //the high module
     {
         public Research(Relationshipts relationshipts)
-        {            
+        {
+            var relations = relationshipts.Relations; // this is bad, we are accessing a low level detail, a datastore.
+            foreach (var r in relations.Where(x => x.Item1.Name == "John" && x.Item2 == Relationship.Parent))
+            {
+                Console.WriteLine($"John has a child called {r.Item3.Name}");
+            }
         }
 
         static void Main(string[] args)
