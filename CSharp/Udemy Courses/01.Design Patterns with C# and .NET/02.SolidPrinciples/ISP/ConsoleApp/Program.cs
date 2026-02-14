@@ -28,6 +28,29 @@
         }
     }
 
+    public interface IPrinter
+    {
+        void Print(Document d);
+    }
+
+    public interface IScanner
+    {
+        void Scan(Document d);
+    }
+
+    public class Photocopier : IPrinter, IScanner
+    {
+        public void Print(Document d)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Scan(Document d)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     public class OldFashionedPrinter : IMachine
     {
         public void Print(Document d)
