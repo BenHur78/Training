@@ -54,7 +54,12 @@
 
             var square = new Square();
             square.Width = 4;
-            Console.WriteLine($"{square} has area {Functions.Area(square)}");   
+            Console.WriteLine($"{square} has area {Functions.Area(square)}");
+
+            // Violation of Liskov Substitution Principle
+            Rectangle rectangle = new Square();
+            rectangle.Width = 4;
+            Console.WriteLine($"{rectangle} has area {Functions.Area(rectangle)}");
         }
     }
 
