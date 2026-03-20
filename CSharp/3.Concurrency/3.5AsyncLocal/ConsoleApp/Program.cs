@@ -4,9 +4,14 @@ using System.Threading.Tasks;
 
 class Example
 {
-    static AsyncLocal<string> _asyncLocalString = new AsyncLocal<string>();
+    static AsyncLocal<string> _asyncLocalString = new AsyncLocal<string>(PrintValues);
 
     static ThreadLocal<string> _threadLocalString = new ThreadLocal<string>();
+
+    static void PrintValues(AsyncLocalValueChangedArgs<string> args)
+    {
+        Console.WriteLine($"This is an notifcation. PreviousValue is '{args.PreviousValue}', CurrentValue is '{args.CurrentValue}'. Thread Id: {Thread.CurrentThread.ManagedThreadId}");
+    }
 
     static async Task AsyncMethodA()
     {
@@ -48,3 +53,24 @@ class Example
 //   Expected 'Value 2', got 'Value 2', ThreadLocal value is ''. Thread Id: 8
 //Exiting AsyncMethodB where expected value is 'Value 1'. Thread Id: 6
 //   Expected 'Value 1', got 'Value 1', ThreadLocal value is ''. Thread Id: 6
+
+// With notifications:
+// This is an notifcation. PreviousValue is '', CurrentValue is 'Value 1'. Thread Id: 1
+// Entering AsyncMethodB where expected value is 'Value 1'. Thread Id: 1
+//    Expected 'Value 1', AsyncLocal value is 'Value 1', ThreadLocal value is 'Value 1'. Thread Id: 1
+// This is an notifcation. PreviousValue is 'Value 1', CurrentValue is 'Value 2'. Thread Id: 1
+// Entering AsyncMethodB where expected value is 'Value 2'. Thread Id: 1
+//    Expected 'Value 2', AsyncLocal value is 'Value 2', ThreadLocal value is 'Value 2'. Thread Id: 1
+// This is an notifcation. PreviousValue is 'Value 2', CurrentValue is ''. Thread Id: 1
+// This is an notifcation. PreviousValue is '', CurrentValue is 'Value 2'. Thread Id: 10
+// This is an notifcation. PreviousValue is '', CurrentValue is 'Value 1'. Thread Id: 6
+// Exiting AsyncMethodB where expected value is 'Value 1'. Thread Id: 6
+// Exiting AsyncMethodB where expected value is 'Value 2'. Thread Id: 10
+//    Expected 'Value 1', got 'Value 1', ThreadLocal value is ''. Thread Id: 6
+//    Expected 'Value 2', got 'Value 2', ThreadLocal value is ''. Thread Id: 10
+// This is an notifcation. PreviousValue is 'Value 2', CurrentValue is ''. Thread Id: 10
+// This is an notifcation. PreviousValue is 'Value 1', CurrentValue is 'Value 2'. Thread Id: 6
+// This is an notifcation. PreviousValue is 'Value 2', CurrentValue is ''. Thread Id: 6
+// This is an notifcation. PreviousValue is '', CurrentValue is 'Value 2'. Thread Id: 6
+// This is an notifcation. PreviousValue is 'Value 2', CurrentValue is 'Value 1'. Thread Id: 6
+// This is an notifcation. PreviousValue is 'Value 1', CurrentValue is ''. Thread Id: 6
