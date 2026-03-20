@@ -3,8 +3,11 @@ The purpose is to study C# language and feature's.
 
 # Some C# concepts we want to study
 
-1. as
-2. as
+1. Delegates
+1. Concurrency
+1. Reactive
+1. Collections
+1. Udemy Courses
 
 | Concept | Reference |
 | ----------- | ----------- |

@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "build C:\\Dev\\Alberto\\Training\\CSharp\\3.Concurrency\\3.5AsyncLocal\\ConsoleApp\\ConsoleApp.csproj",
+			"file": "C:\\Dev\\Alberto\\Training\\CSharp\\3.Concurrency\\3.5AsyncLocal\\ConsoleApp\\ConsoleApp.csproj",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "dotnet: build C:\\Dev\\Alberto\\Training\\CSharp\\3.Concurrency\\3.5AsyncLocal\\ConsoleApp\\ConsoleApp.csproj"
+		}
+	]
+}
